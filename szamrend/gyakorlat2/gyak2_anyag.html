@@ -1,0 +1,75 @@
+<p><span style="text-decoration: underline; font-size: 18pt;"><strong>H&aacute;l&oacute;zati kapcsolatok</strong></span></p>
+<p><span style="color: #000000; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;"><span style="text-decoration: underline;">Feladat</span>: </span></strong></span></p>
+<p><span style="font-size: 14pt;">N&eacute;zz&uuml;k &aacute;t a telnet/ssh, ftp/scp, bin&aacute;ris/sz&ouml;veges ftp kapcsolatokat. Besz&eacute;lj&uuml;k &aacute;t a PUTTY/WinScp programok műk&ouml;d&eacute;s&eacute;t, el&eacute;rhetős&eacute;g&eacute;t, haszn&aacute;lat&aacute;t.</span></p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; font-size: 18pt;"><strong>Public k&ouml;nyvt&aacute;r haszn&aacute;lata</strong></span></p>
+<p><span style="background-color: #c2e0f4;"><strong><span style="text-decoration: underline;"><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat: </span></span></strong></span></p>
+<p><span style="font-size: 14pt;">K&eacute;sz&iacute;ts&uuml;nk egyszerű sz&ouml;veges f&aacute;jlt Word seg&iacute;ts&eacute;g&eacute;vel. &Iacute;rjuk bele, hogy "Sz&aacute;m&iacute;t&oacute;g&eacute;pes rendszerek". Ments&uuml;k le HTML form&aacute;tumban, a neve legyen index.html.</span></p>
+<p><span style="font-size: 14pt;">WinScp seg&iacute;ts&eacute;g&eacute;vel m&aacute;soljuk fel a public k&ouml;nyvt&aacute;runkba a f&aacute;jlt! Egy b&ouml;ng&eacute;szőt megnyitva &iacute;rjuk be a people.inf.elte.hu/felhaszn&aacute;l&oacute;n&eacute;v c&iacute;met.</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18pt;"><strong><span style="text-decoration: underline;">Ismerked&eacute;s a Linux vil&aacute;g&aacute;val</span></strong></span></p>
+<p><span style="font-size: 14pt;">A Linux k&eacute;t főbb komponensből &eacute;p&uuml;l fel: kernelből &eacute;s parancs&eacute;rtelmezőből, ezek mellett tal&aacute;lhat&oacute;ak m&eacute;g a k&uuml;l&ouml;nb&ouml;ző programok. A kernel v&eacute;gzi a rendszer erőforr&aacute;sainak megoszt&aacute;s&aacute;t &eacute;s a fut&oacute; folyamatok &uuml;temez&eacute;s&eacute;t, mik&ouml;zben egy, a felhaszn&aacute;l&oacute;k sz&aacute;m&aacute;ra el&eacute;rhető interf&eacute;szt biztos&iacute;t a hardver fel&eacute;. A kernel k&ouml;r&uuml;l tal&aacute;lhat&oacute; a shell, amely a felhaszn&aacute;l&oacute; &eacute;s a kernel k&ouml;z&ouml;tti kapcsolatot biztos&iacute;tja.</span></p>
+<p><span style="font-size: 14pt;">A Linux f&aacute;jlszerkezete fa-strukt&uacute;r&aacute;j&uacute;. Ez annyit tesz, hogy a kiindul&oacute; k&ouml;nyvt&aacute;r a / (root, fők&ouml;nyvt&aacute;r), amelyből le&aacute;gazik a t&ouml;bbi k&ouml;nyvt&aacute;r. Ilyenek p&eacute;ld&aacute;ul a:</span></p>
+<ul>
+<li><span style="font-size: 14pt;">/home: felhaszn&aacute;l&oacute;k k&ouml;nyvt&aacute;rai</span></li>
+<li><span style="font-size: 14pt;">/dev: hardvereszk&ouml;z&ouml;k</span></li>
+<li><span style="font-size: 14pt;">/etc: konfigur&aacute;ci&oacute;s f&aacute;jlok</span></li>
+<li><span style="font-size: 14pt;">/usr/bin: k&ouml;zhaszn&aacute;lat&uacute; parancsok</span></li>
+<li><span style="font-size: 14pt;">/tmp: ideiglenes f&aacute;jlok</span></li>
+<li><span style="font-size: 14pt;">/lib: megosztott programk&ouml;nyvt&aacute;rak</span></li>
+<li><span style="font-size: 14pt;">...</span></li>
+</ul>
+<p>&nbsp;</p>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 18pt;">Alap Unix parancsok</span></span></strong></p>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 14pt;">Felhaszn&aacute;l&oacute; lek&eacute;rdez&eacute;se, testreszab&aacute;s</span></span></strong></p>
+<ul>
+<li><span style="font-size: 14pt;">who: bejelentkezett felhaszn&aacute;l&oacute;k</span></li>
+<li><span style="font-size: 14pt;">whoami: aktu&aacute;lis termin&aacute;lban mely felhaszn&aacute;l&oacute; &iacute;rta be a parancsot</span></li>
+<li><span style="font-size: 14pt;">passwd: jelsz&oacute; be&aacute;ll&iacute;t&aacute;s</span></li>
+</ul>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 14pt;">K&ouml;nyvt&aacute;r- &eacute;s f&aacute;jlkezelő parancsok</span></span></strong></p>
+<ul>
+<li><span style="font-size: 14pt;">pwd: aktu&aacute;lis k&ouml;nyvt&aacute;r, el&eacute;r&eacute;si &uacute;tvonal</span></li>
+<li><span style="font-size: 14pt;">ls: k&ouml;nyvt&aacute;r list&aacute;z&aacute;sa (-l: r&eacute;szletes list&aacute;z&aacute;s, -a: rejtett f&aacute;jlok list&aacute;z&aacute;sa)</span></li>
+<li><span style="font-size: 14pt;">cd: mapp&aacute;k k&ouml;z&ouml;tti v&aacute;lt&aacute;s (cd ..: sz&uuml;lők&ouml;nyvt&aacute;rba l&eacute;p&eacute;s k&ouml;nyvt&aacute;rak k&ouml;z&ouml;tt)</span></li>
+<li><span style="font-size: 14pt;">mkdir: k&ouml;nyvt&aacute;r l&eacute;trehoz&aacute;sa</span></li>
+<li><span style="font-size: 14pt;">rmdir: k&ouml;nyvt&aacute;r t&ouml;rl&eacute;se</span></li>
+<li><span style="font-size: 14pt;">cp: f&aacute;jlok m&aacute;sol&aacute;sa</span></li>
+<li><span style="font-size: 14pt;">mv: f&aacute;jlok mozgat&aacute;sa, &aacute;thelyez&eacute;se</span></li>
+<li><span style="font-size: 14pt;">rm: f&aacute;jlok t&ouml;rl&eacute;se (-r: rekurz&iacute;v t&ouml;rl&eacute;s, -f: "force", k&eacute;rdez&eacute;s n&eacute;lk&uuml;li t&ouml;rl&eacute;s)</span></li>
+<li><span style="font-size: 14pt;">cat: f&aacute;jltartalom megjelen&iacute;t&eacute;se</span></li>
+<li><span style="font-size: 14pt;">nano, vim: f&aacute;jl megnyit&aacute;sa szerkeszt&eacute;sre</span></li>
+<li><span style="font-size: 14pt;">touch: f&aacute;jl l&eacute;trehoz&aacute;sa (megnyit&aacute;s n&eacute;lk&uuml;l)</span></li>
+<li><span style="font-size: 14pt;">ln: link l&eacute;trehoz&aacute;sa</span></li>
+<li><span style="font-size: 14pt;">more, less: f&aacute;jltartalom megtekint&eacute;se</span></li>
+<li><span style="font-size: 14pt;">zip, tar: t&ouml;m&ouml;r&iacute;t&eacute;s</span></li>
+</ul>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 14pt;">Kommunik&aacute;ci&oacute;</span></span></strong></p>
+<ul>
+<li><span style="font-size: 14pt;">finger: felhaszn&aacute;l&oacute; keres&eacute;se</span></li>
+<li><span style="font-size: 14pt;">talk: besz&eacute;lget&eacute;s m&aacute;sik felhaszn&aacute;l&oacute;val</span></li>
+</ul>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 14pt;">Jogosults&aacute;gok</span></span></strong></p>
+<p><span style="font-size: 14pt;">Unix alatt a jogosults&aacute;gkezel&eacute;s 3 csoportra &eacute;s 3 jogosults&aacute;gt&iacute;pusra bomlik. Alap&eacute;rtelmezetten a rendszerben h&aacute;romf&eacute;le felhaszn&aacute;l&oacute;i t&iacute;pust k&uuml;l&ouml;nb&ouml;ztet&uuml;nk meg: a felhaszn&aacute;l&oacute;t (u: user), a felhaszn&aacute;l&oacute; csoportj&aacute;t (g: group) &eacute;s mindenki m&aacute;st (o: other), m&aacute;s esetben lehetős&eacute;g van mindenkire hivatkozni (a: all). Ezekhez tartozik h&aacute;romf&eacute;le jogosults&aacute;g: &iacute;r&aacute;si (w), olvas&aacute;si (r) &eacute;s futtat&aacute;si jog (x).&nbsp;</span></p>
+<p><span style="font-size: 14pt;">A jogosults&aacute;gok megad&aacute;s&aacute;ra &eacute;s elvon&aacute;s&aacute;ra a chmod parancsot haszn&aacute;ljuk. Haszn&aacute;lata: chmod felhaszn&aacute;l&oacute;+jogosults&aacute;g f&aacute;jln&eacute;v.</span></p>
+<p><span style="font-size: 14pt;">&Eacute;rdekess&eacute;gk&eacute;ppen, lehets&eacute;ges nyolcas sz&aacute;mrendszerben is megadni jogosults&aacute;gokat, ekkor a futtat&aacute;si jog 1, &iacute;r&aacute;si jog 2, olvas&aacute;si jog 4-et jel&ouml;l. P&eacute;lda: chmod 644 f&aacute;jln&eacute;v.</span></p>
+<p><span style="font-size: 14pt;">Az &aacute;llom&aacute;ny alapjogok m&oacute;dos&iacute;t&aacute;s&aacute;ra az umask, a tulajdonjog megv&aacute;ltoztat&aacute;s&aacute;ra a chown parancsokat haszn&aacute;ljuk.</span></p>
+<p><span style="background-color: #c2e0f4;"><strong><span style="text-decoration: underline;"><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat 1:</span></span></strong></span></p>
+<p><span style="font-size: 14pt;">Hozzunk l&eacute;tre egy megadott k&ouml;nyvt&aacute;rszerkezetet: elősz&ouml;r a foci k&ouml;nyvt&aacute;rat, majd a foci/nb1 &eacute;s foci/nb2 k&ouml;nyvt&aacute;rakat. Hozzuk l&eacute;tre a k&ouml;vetkező f&aacute;jlokat az nb1 k&ouml;nyvt&aacute;rban: &aacute;tir&aacute;ny&iacute;t&aacute;ssal "Hajr&aacute; Fradi" a fradi.txt-ben, tartalom n&eacute;lk&uuml;l fradi_ures.txt, valamint a foci.txt-be &iacute;rjuk bele, hogy "Szeretem a focit". A fradi.txt-ben mindenki kapjon &iacute;r&aacute;si jogot, a fradi_ures.txt csak futtat&aacute;sit! Pr&oacute;b&aacute;ljuk őket cat paranccsal megnyitni.</span></p>
+<p><span style="font-size: 14pt;">Az nb1 k&ouml;nyvt&aacute;rb&oacute;l m&aacute;soljuk &aacute;t a fradi.txt-t az nb2 k&ouml;nyvt&aacute;rba ugyanezen a n&eacute;ven, a fradi_ures.txt-t pedig &aacute;tnevezve orange_cat.txt-re helyezz&uuml;k &aacute;t! Az orange_cat.txt eset&eacute;n adjunk a felhaszn&aacute;l&oacute;nak olvas&aacute;si &eacute;s futtat&aacute;si jogot, mindenki m&aacute;snak csak olvas&aacute;si jogot!</span></p>
+<p><span style="font-size: 14pt;">Miut&aacute;n v&eacute;gezt&uuml;nk, t&ouml;r&ouml;lj&uuml;k az nb1 k&ouml;nyvt&aacute;rat, &eacute;s t&ouml;r&ouml;lj&uuml;k a fradi.txt f&aacute;jlt!</span></p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat 2:</span></strong></span></p>
+<p><span style="font-size: 14pt;">Legyen egy k&ouml;nyvt&aacute;rszerkezet&uuml;nk:</span></p>
+<p><span style="font-size: 14pt;">&ndash; gyakorlat2_fokonyvtar</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">&ndash; konyvtar1</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">&ndash; konyvtar2</span></p>
+<p style="padding-left: 80px;"><span style="font-size: 14pt;">&ndash; alkonyvtar1</span></p>
+<p style="padding-left: 80px;"><span style="font-size: 14pt;">&ndash; alkonyvtar2</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">&ndash; konyvtar3</span></p>
+<p style="padding-left: 80px;"><span style="font-size: 14pt;">&ndash; alkonyvtar3</span></p>
+<p><span style="font-size: 14pt;">A feladat az, hogy kiosszunk megfelelő jogosults&aacute;gokat, &eacute;s l&eacute;trehozzunk n&eacute;h&aacute;ny f&aacute;jlt manu&aacute;lisan, megnyit&aacute;ssal &eacute;s megnyit&aacute;s n&eacute;lk&uuml;l.</span></p>
+<p><span style="font-size: 14pt;">Konyvtar1: tartalmaz kettő f&aacute;jlt, a no_permission.txt-t &eacute;s az all_permission.txt-t. Eredetileg l&eacute;trehoz&aacute;sukkor van jogosults&aacute;gunk hozz&aacute;juk, de &aacute;ll&iacute;tsuk &aacute;t őket &uacute;gy, hogy a nev&uuml;knek megfelelően kapjanak jogosults&aacute;gokat!</span></p>
+<p><span style="font-size: 14pt;">Konyvtar2: tartalmaz egy f&aacute;jlt, amely tartalma legyen "M&aacute;sodik k&ouml;nyvt&aacute;r, k&eacute;t alk&ouml;nyvt&aacute;ra &eacute;s egy f&aacute;jlja van.". Ezt m&aacute;soljuk &aacute;t mindk&eacute;t alk&ouml;nyvt&aacute;r&aacute;ba!&nbsp;</span></p>
+<p><span style="font-size: 14pt;">Alkonyvtar2: &aacute;tm&aacute;sol&aacute;s ut&aacute;n m&aacute;soljuk le a f&aacute;jlt, a neve moved.txt legyen, a tartalma v&aacute;ltozzon "Mozgathat&oacute; f&aacute;jl."-ra. Ezt a f&aacute;jlt helyezz&uuml;k &aacute;t az alkonyvtar3-ba, miut&aacute;n mindenkitől elvett&uuml;k a jogokat hozz&aacute;, csak a felhaszn&aacute;l&oacute;nak maradt meg!</span></p>
+<p><span style="font-size: 14pt;">Konyvtar3: a felhaszn&aacute;l&oacute; csoportj&aacute;nak legyen meg minden joga az alkonyvtar3-hoz, m&aacute;sok csak olvas&aacute;si jogosults&aacute;ggal rendelkezzenek!</span></p>
+<p><span style="font-size: 14pt;">Miut&aacute;n v&eacute;gezt&uuml;nk, az alkonyvtar1 &eacute;s alkonyvtar2 mapp&aacute;k ker&uuml;ljenek t&ouml;rl&eacute;sre, a konyvtar1 neve pedig v&aacute;ltozzon meg "Megmaradt_konyvtar1"-re!</span></p>

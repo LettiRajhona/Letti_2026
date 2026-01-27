@@ -1,0 +1,87 @@
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 18pt;">Shell script alapok</span></strong></span></p>
+<p><span style="text-decoration: underline; font-size: 14pt;"><strong>&Eacute;rtelmező megad&aacute;sa</strong></span></p>
+<p><span style="font-size: 14pt;">A script első sor&aacute;ban a k&ouml;vetkező sor megad&aacute;sa kell: <span style="color: #e62429;"><strong>#!/bin/bash</strong></span>. Ezzel meghat&aacute;rozzuk, hogy a parancs&eacute;rtelmező, amit haszn&aacute;lunk, a bash.</span></p>
+<p><span style="font-size: 14pt; color: #ff0000;">Fontos: a shell scriptek futtat&aacute;s&aacute;hoz futtat&aacute;si jogra van sz&uuml;ks&eacute;g&uuml;nk! Ezut&aacute;n tudjuk elind&iacute;tani: ./pelda.sh.</span></p>
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 14pt;">V&aacute;ltoz&oacute;k</span></strong></span></p>
+<p><span style="font-size: 14pt;">Kezdj&uuml;k a legkisebb r&eacute;szegys&eacute;ggel. A scriptel&eacute;s vil&aacute;g&aacute;ban is tudunk f&uuml;ggv&eacute;nyeket, v&aacute;ltoz&oacute;kat haszn&aacute;lni. A v&aacute;ltoz&oacute;k megad&aacute;sa egyszerűen t&ouml;rt&eacute;nik: v&aacute;ltoz&oacute;n&eacute;v=&eacute;rt&eacute;k. Fontos azonban, hogy a v&aacute;ltoz&oacute;n&eacute;v &eacute;s a megadand&oacute; &eacute;rt&eacute;k k&ouml;z&ouml;tt NINCS sz&oacute;k&ouml;z, csak egy egyenlős&eacute;gjel!</span></p>
+<p><span style="font-size: 14pt;">Megeml&iacute;tendő tov&aacute;bb&aacute;, hogy &eacute;rt&eacute;kad&aacute;skor a v&aacute;ltoz&oacute;n&eacute;v &ouml;nmag&aacute;ban &aacute;ll. Ha viszont mag&aacute;ra a v&aacute;ltoz&oacute;&eacute;rt&eacute;kre hivatkozunk, akkor a $v&aacute;ltoz&oacute;n&eacute;v haszn&aacute;lata sz&uuml;ks&eacute;ges. </span></p>
+<p><span style="font-size: 14pt;">Szeml&eacute;ltess&uuml;k k&eacute;t v&aacute;ltoz&oacute; &eacute;rt&eacute;k&eacute;nek cser&eacute;j&eacute;t, ahol a &eacute;s b a k&eacute;t v&aacute;ltoz&oacute;, temp az ideiglenes, amellyel kicser&eacute;lj&uuml;k a &eacute;s b &eacute;rt&eacute;k&eacute;t.</span></p>
+<pre><span>a="alma"<br />b="barack"<br />temp=$a ## a 'temp' v&aacute;ltoz&oacute; megkapja az 'a' &eacute;rt&eacute;k&eacute;t, tartalma: alma<br />a=$b ## az 'a' v&aacute;ltoz&oacute; megkapja a 'b' &eacute;rt&eacute;k&eacute;t, tartalma: barack<br />b=$temp ## a 'b' v&aacute;ltoz&oacute; megkapja a 'temp' &eacute;rt&eacute;k&eacute;t, tartalma: alma</span></pre>
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 14pt;">Matematikai kifejez&eacute;sek</span></strong></span></p>
+<p><span style="font-size: 14pt;">A shell script vil&aacute;g&aacute;ban a matematikai kifejez&eacute;sek hasonl&oacute;k&eacute;pp műk&ouml;dnek, mint m&aacute;s nyelvekben. A haszn&aacute;lat&aacute;hoz t&ouml;bb lehetős&eacute;g&uuml;nk van:</span></p>
+<ul>
+<li><span style="font-size: 14pt;">expr utas&iacute;t&aacute;s: eredeti forma, a kifejez&eacute;s kulcsszav&aacute;t, oper&aacute;tort &eacute;s operandusokat backtickek (`) k&ouml;z&eacute; &iacute;rjuk</span></li>
+</ul>
+<pre><span>a=`expr 3 + 4`<br />a=`expr $b + $c`## ahol b &eacute;s c kettő tetszőleges, sz&aacute;mot tartalmaz&oacute; v&aacute;ltoz&oacute;</span></pre>
+<ul>
+<li><span style="font-size: 14pt;">v&aacute;ltoz&oacute;&eacute;rt&eacute;kk&eacute;nt hivatkoz&aacute;s: &uacute;jabb forma, C-szerű szintaxis, a művelet el&eacute; doll&aacute;rjel ker&uuml;l, valamint ebben az esetben a haszn&aacute;lt v&aacute;ltoz&oacute;kra vonatkoz&oacute;an nem kell egyes&eacute;vel doll&aacute;rjelezni</span></li>
+</ul>
+<pre><span>a=$((3 + 4))<br />a=$((b + c)) ## ahol b &eacute;s c kettő tetszőleges, sz&aacute;mot tartalmaz&oacute; v&aacute;ltoz&oacute;</span></pre>
+<p><span style="font-size: 14pt;">K&uuml;l&ouml;nb&ouml;ző matematikai oper&aacute;torok haszn&aacute;lata megengedett, csak hogy megeml&iacute;ts&uuml;nk p&aacute;rat:</span></p>
+<ul>
+<li><span style="font-size: 14pt;">&ouml;sszead&aacute;s</span></li>
+</ul>
+<pre><span>a=`expr 2 + 1`<br />a=`expr $b + $c`</span></pre>
+<ul>
+<li><span style="font-size: 14pt;">kivon&aacute;s</span></li>
+</ul>
+<pre><span>a=`expr 5 - 3`<br />a=`expr $b - $c`</span></pre>
+<ul>
+<li><span style="font-size: 14pt;">szorz&aacute;s: a szorz&aacute;sjel (*) Linux rendszereken t&ouml;bbf&eacute;le jelent&eacute;ssel b&iacute;r (pl. mintailleszt&eacute;sn&eacute;l), ez&eacute;rt "hat&aacute;stalan&iacute;tani" kell backslash (\) karakterrel, hogy a szorz&aacute;s jelent&eacute;s&eacute;t haszn&aacute;ljuk</span></li>
+</ul>
+<pre><span>a=`expr 5 \* 3`<br />a=`expr $b \* $c`</span></pre>
+<ul>
+<li><span style="font-size: 14pt;">hatv&aacute;nyoz&aacute;s: nincs eredeti expr v&aacute;ltozata, csak az &uacute;j szintaktik&aacute;val &eacute;rhető el</span></li>
+</ul>
+<pre><span>a=$((3 ** 2))<br />a=$((b ** c))</span></pre>
+<ul>
+<li><span style="font-size: 14pt;">oszt&aacute;s</span></li>
+</ul>
+<pre><span>a=`expr 5 / 3`<br />a=`expr $b / $c`</span></pre>
+<ul>
+<li><span style="font-size: 14pt;">modul&oacute; oszt&aacute;s</span></li>
+</ul>
+<pre><span>a=`expr 5 % 3`<br />a=`expr $b % $c`</span></pre>
+<ul>
+<li><span style="font-size: 14pt;">&ouml;sszehasonl&iacute;t&aacute;sok: &lt;, &lt;=, &gt;, &gt;=, =, != (sz&aacute;m&eacute;rt&eacute;ket kapunk, hat&aacute;stalan&iacute;tani kell)</span></li>
+</ul>
+<p><span style="background-color: #c2e0f4;"><strong><span style="text-decoration: underline;"><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat:</span></span></strong></span></p>
+<p><span style="font-size: 14pt;">&Iacute;rjuk meg a matematikai_muveletek.sh programot, amelyben manu&aacute;lisan megadjuk az a &eacute;s b &eacute;rt&eacute;k&eacute;t, majd ki&iacute;ratjuk a k&ouml;vetkezőket: </span></p>
+<pre><span>a + b = [&eacute;rt&eacute;k]</span><br /><span>a - b = [&eacute;rt&eacute;k]</span><br /><span>a * b = [&eacute;rt&eacute;k]</span><br /><span>a / b = [&eacute;rt&eacute;k]</span><br /><span>a % b = [&eacute;rt&eacute;k]</span><br /><span>a ^ b = [&eacute;rt&eacute;k]</span></pre>
+<p><span style="font-size: 14pt;">Egy szam.txt f&aacute;jlban t&aacute;rolunk egy sz&aacute;mot. Ments&uuml;k el a scriptben az &eacute;rt&eacute;ket, &iacute;rassuk ki, majd a f&aacute;jlba &iacute;rjuk vissza az eggyel megn&ouml;velt &eacute;rt&eacute;k&eacute;t!</span></p>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 14pt;">Beolvas&aacute;s a termin&aacute;lr&oacute;l</span></span></strong></p>
+<p><span style="font-size: 14pt;">A beolvas&aacute;shoz a read parancs haszn&aacute;lata sz&uuml;ks&eacute;ges, amellyel a konzolr&oacute;l &aacute;ltalunk megadott &eacute;rt&eacute;kkel dolgozhatunk tov&aacute;bb. Haszn&aacute;lata:</span></p>
+<pre><span>read a ## beolvasunk egy &eacute;rt&eacute;ket az 'a' v&aacute;ltoz&oacute;ba<br /></span></pre>
+<p><span style="background-color: #c2e0f4;"><strong><span style="text-decoration: underline;"><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat:</span></span></strong></span></p>
+<p><span style="font-size: 14pt;">&Iacute;rjunk programot, amellyel bek&eacute;rj&uuml;k a hallgat&oacute; nev&eacute;t, &eacute;s k&ouml;sz&ouml;ntj&uuml;k a "Szia, [hallgat&oacute;n&eacute;v]" ki&iacute;rat&aacute;ssal!</span></p>
+<p><span style="font-size: 14pt;">&Iacute;rjunk egy masologep.sh nevezetű schell scriptet, ahol read-del bek&eacute;rj&uuml;k a m&aacute;soland&oacute; &eacute;s a c&eacute;lf&aacute;jl nev&eacute;t, &eacute;s megval&oacute;s&iacute;tjuk a cp parancs műk&ouml;d&eacute;s&eacute;t!</span></p>
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 14pt;">Be&aacute;gyazott parancsok</span></strong></span></p>
+<p><span style="font-size: 14pt;">Shell Scriptben lehetős&eacute;g&uuml;nk ny&iacute;lik be&aacute;gyazni parancsokat, amelyek seg&iacute;ts&eacute;g&eacute;vel a v&aacute;ltoz&oacute;knak &eacute;rt&eacute;k&uuml;l tudjuk adni a parancsok eredm&eacute;nyeit. Tegy&uuml;k fel, hogy list&aacute;zni szeretn&eacute;nk a k&ouml;nyvt&aacute;runkat. Ekkor &ndash; mivel parancsot adunk meg &ndash; csakugyan, mint a matematikai kifejez&eacute;sekn&eacute;l, backtickek k&ouml;z&eacute; kell illeszten&uuml;nk a futtatand&oacute; parancsot.&nbsp;</span></p>
+<p><span style="font-size: 14pt;">Mondjuk, hogy szeretn&eacute;nk az aktu&aacute;lis k&ouml;nyvt&aacute;rban tal&aacute;lhat&oacute; &aacute;llom&aacute;nyok darabsz&aacute;m&aacute;t megkapni, &eacute;s elt&aacute;rolni egy scriptben. Ennek a megold&aacute;sa:</span></p>
+<pre><span>listazas=`ls | wc -l` ## a 'listazas' v&aacute;ltoz&oacute;ban az ls | wc -l cs&ouml;vez&eacute;ssel kapott eredm&eacute;ny tal&aacute;lhat&oacute;</span><br /><span>echo $listazas ## ki&iacute;ratjuk az eredm&eacute;nyt</span></pre>
+<p><span style="font-size: 14pt;">EOF: End Of File, arra tudjuk haszn&aacute;lni, hogy ne kelljen nano haszn&aacute;lat&aacute;val script k&ouml;zben megnyitni egy f&aacute;jlt. Ezzel az &aacute;tir&aacute;ny&iacute;t&aacute;st felv&aacute;lthatjuk, &eacute;s t&ouml;bb sort is &aacute;tadhatunk egy f&aacute;jlnak. P&eacute;ld&aacute;ul itt a pelda.txt tartalm&aacute;ba &iacute;runk:</span></p>
+<pre><span>cat &gt; pelda.txt &lt;&lt;EOF</span><br /><span>P&eacute;ldaf&aacute;jl tartalma.</span><br /><span>Ez pedig a m&aacute;sodik sora.</span><br /><span>EOF</span></pre>
+<p><span style="background-color: #c2e0f4;"><strong><span style="text-decoration: underline;"><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat:</span></span></strong></span></p>
+<p><span style="font-size: 14pt;">K&eacute;sz&iacute;ts&uuml;nk shell scriptet, amely szűr a p betűvel kezdődő &aacute;llom&aacute;nyokra, majd pedig megn&eacute;zi, h&aacute;ny darab p &eacute;s d betűvel kezdődő &aacute;llom&aacute;ny van a k&ouml;nyvt&aacute;rban!</span></p>
+<p><span style="font-size: 14pt;">K&eacute;sz&iacute;ts&uuml;nk programot, amelyben cser&eacute;lj&uuml;k ki egy beolvasott sz&oacute; betűit nagybetűsre!</span></p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat 1 (k&ouml;nyvt&aacute;r&eacute;p&iacute;t&eacute;s):</span></strong></span></p>
+<p><span style="font-size: 14pt;">K&eacute;sz&iacute;ts&uuml;nk shell scriptet konyvtar_epito.sh n&eacute;ven! A feladat itt az, hogy a script fel&eacute;p&iacute;tsen nek&uuml;nk egy komplett k&ouml;nyvt&aacute;rszerkezetet, amely a k&ouml;vetkezők&eacute;ppen n&eacute;z ki:</span></p>
+<p><span style="font-size: 14pt;">&nbsp;&ndash; konyvtar_alap</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">&ndash; alkonyvtar1</span></p>
+<p style="padding-left: 80px;"><span style="font-size: 14pt;">&ndash; al_alkonyvtar1</span></p>
+<p style="padding-left: 80px;"><span style="font-size: 14pt;">&ndash; fajl1.txt</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">&ndash; alkonyvtar2</span></p>
+<p style="padding-left: 80px;"><span style="font-size: 14pt;">&ndash; fajl2.txt</span></p>
+<p style="padding-left: 80px;"><span style="font-size: 14pt;">&ndash; fajl3.txt</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">&ndash; alkonyvtar3</span></p>
+<p><span style="font-size: 14pt;">Azt szeretn&eacute;nk, hogy a fajl1.txt tartalma &aacute;tir&aacute;ny&iacute;t&aacute;ssal legyen "fajl_neve: fajl1.txt". A fajl2.txt-t nano-val nyissuk meg, &eacute;s &iacute;rjuk bele, hogy</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">alma</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">barack</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">citrom</span></p>
+<p><span style="font-size: 14pt;">A fajl3.txt pedig EOF bele&iacute;r&aacute;ssal t&ouml;rt&eacute;njen, a k&ouml;vetkező sz&ouml;veggel:</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">Ez a harmadik bele&iacute;r&aacute;si m&oacute;dszer.</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">Az első az &aacute;tir&aacute;ny&iacute;t&aacute;s.</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">A m&aacute;sodik a nano.</span></p>
+<p style="padding-left: 40px;"><span style="font-size: 14pt;">Ettől f&uuml;ggetlen&uuml;l az EOF a legjobb.</span></p>
+<p><span style="font-size: 14pt;">A hib&aacute;k elker&uuml;l&eacute;se &eacute;rdek&eacute;ben legyen egy konyvtar_rombolo.sh, amely annyit tesz csak, hogy kit&ouml;rli a l&eacute;tező fők&ouml;nyvt&aacute;rat, minden tartalmaz&aacute;s&aacute;val egy&uuml;tt.</span></p>

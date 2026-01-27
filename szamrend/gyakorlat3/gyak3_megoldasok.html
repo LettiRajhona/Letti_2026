@@ -1,0 +1,14 @@
+<p><span style="background-color: #c2e0f4;"><strong><span style="text-decoration: underline;"><span style="font-size: 14pt; background-color: #c2e0f4;">Sleep feladat <span style="color: #000000; text-decoration: underline;">megold&aacute;sa:</span></span></span></strong></span></p>
+<pre>sleep 20<br />sleep 20 &amp;<br />nohup sleep 20</pre>
+<p>&nbsp;</p>
+<p><span style="background-color: #c2e0f4;"><strong><span style="text-decoration: underline;"><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (folyamatok) megold&aacute;sa:</span></span></strong></span></p>
+<pre>nano szoveg.txt -&gt; egyik ablakban megnyitni<br />kill [azonos&iacute;t&oacute;] -&gt; m&aacute;sik ablakban<br />trap 'echo "Hajr&aacute; ELTE"' SIGINT<br />trap - SIGINT</pre>
+<p>&nbsp;</p>
+<p><span style="background-color: #c2e0f4;"><strong><span style="text-decoration: underline;"><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (szűrők f&aacute;jlban) megold&aacute;sa:</span></span></strong></span></p>
+<pre>wc -m minden.txt<br />wc -w minden.txt<br />wc -l minden.txt<br />sort minden.txt<br />sort minden.txt | uniq -c | sort -nr<br />sort minden.txt | uniq -c | sort -nr | head -3 | tail -1<br />grep "alma" minden.txt<br />grep -w "alma" minden.txt<br />grep -E '[-0-9+*/^]' minden.txt<br />cat minden.txt | tr '[:lower:]' '[:upper:]' &gt;&gt; minden_nagybetus.txt<br />grep '^[a-zA-Z].*[0-9]$' minden.txt<br />grep -E '^.{10}$' minden.txt<br />sort -r minden.txt</pre>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (szűrők &aacute;ltal&aacute;nosan) megold&aacute;sa:</span></strong></span></p>
+<pre>ls -a | wc -l<br />ls -al | grep '^d' | wc -l<br />ls -al | grep '^-' | wc -l<br />ls -al | grep '\.' | wc -l<br />find . -type d<br />find . -type f | wc -l<br />ls -l | cut -d ' ' -f7 | sort -r | head -1<br />ls -l | cut -d ' ' -f1-f7 | sort -r | head -2 | tail -1 | cut -d ' ' -f1<br />ls -a | grep '.*.log'<br />grep -rl "TODO" | wc -l<br />ls -a | grep -rl "2025" | grep ".*.txt"<br />who | cut -d ' ' -f1 &gt;&gt; azon.txt<br />ps -aux | grep "^$(whoami)" | wc -l<br />ps -aux | grep "^$(whoami)" | sort -k4 -nr | head -10<br />netstat -tulnp &gt;&gt; portok.txt</pre>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (regex) megold&aacute;sa:</span></strong></span></p>
+<pre><span>ls -l | cut -d " " -f1 | grep -E "(r.*){2,}"<br />ls -l | grep -E ".*a{a}(bc|de).*"<br />ls | grep -E "[a-zA-Z][0-9]+\.txt$"<br />ls | grep -E "^[0-9]+[a-zA-Z]\.txt$"<br />ls | grep -E "(a.*){2,5}"</span></pre>

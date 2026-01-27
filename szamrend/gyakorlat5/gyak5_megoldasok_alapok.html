@@ -1,0 +1,23 @@
+<p><span style="text-decoration: underline;"><span style="background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (műveletek) megold&aacute;sa:</span></strong></span></span></p>
+<pre>#!/bin/bash<br /><br />echo "Matematikai műveletek ki&iacute;rat&aacute;sa, a = 7, b = 4"<br />a=7<br />b=4<br /><br />osszeg=`expr $a + $b`<br />echo "a + b = $osszeg"<br /><br />kulonbseg=`expr $a - $b`<br />echo "a - b = $kulonbseg"<br /><br />szorzat=`expr $a \* $b`<br />echo "a * b = $szorzat"<br /><br />hanyados=`expr $a / $b`<br />echo "a / b = $hanyados"<br /><br />maradek=`expr $a % $b`<br />echo "a % b = $maradek"<br /><br />hatvany=$((a ** b))<br />echo "a ^ b = $hatvany"</pre>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (sz&aacute;mn&ouml;vel&eacute;s) megold&aacute;sa:</span></strong></span></p>
+<pre>#!/bin/bash<br /><br />szam=`cat szam.txt`<br />megnovelt_szam=`expr $szam + 1`<br /><br />echo "A sz&aacute;m: $szam, megn&ouml;velt &eacute;rt&eacute;ke: $megnovelt_szam"<br />echo "$megnovelt_szam" &gt; szam.txt</pre>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (k&ouml;sz&ouml;ntő) megold&aacute;sa:</span></strong></span></p>
+<pre>#!/bin/bash<br /><br />## echo -n: ki&iacute;rat&aacute;s ut&aacute;n nincs sort&ouml;r&eacute;s<br />echo -n "K&eacute;rlek, add meg a neved: "<br />read nev<br /><br />echo "Szia, $nev!"</pre>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (m&aacute;sol&aacute;s) megold&aacute;sa:</span></strong></span></p>
+<pre>#!/bin/bash<br /><br />echo "M&aacute;sol&oacute;g&eacute;p program"<br /><br />echo -n "Add meg a m&aacute;soland&oacute; f&aacute;jl nev&eacute;t: "<br />read masolando<br /><br />echo -n "Add meg a c&eacute;lf&aacute;jl nev&eacute;t: "<br />read celfajl<br /><br />cp $masolando $celfajl</pre>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (P vagy D kezdőbetűk) megold&aacute;sa:</span></strong></span></p>
+<pre>#!/bin/bash<br /><br />echo "A k&ouml;nyvt&aacute;rban tal&aacute;lhat&oacute; P betűvel kezdődő &aacute;llom&aacute;nyok: "<br />p=`ls | grep "^[pP].*"`<br />echo $p<br /><br />## &uuml;res echo: sort&ouml;r&eacute;s<br />echo<br /><br />echo "A k&ouml;nyvt&aacute;rban tal&aacute;lhat&oacute; P vagy D betűvel kezdődő &aacute;llom&aacute;nyok darabsz&aacute;ma: "<br />pd=`ls | grep -E "^([pP]|[dD]).*" | wc -l`<br />echo $pd</pre>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">&Oacute;rai feladat (nagybetűss&eacute; alak&iacute;t&aacute;s) megold&aacute;sa:</span></strong></span></p>
+<pre>#!/bin/bash<br /><br />echo -n "Adj meg egy sz&oacute;t: "<br />read szo<br /><br />nagybetus=`echo $szo | tr "[:lower:]" "[:upper:]"`<br />echo "A sz&oacute; nagybetűs alakban: $nagybetus"</pre>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">Gyakorl&oacute; feladat megold&aacute;sa:</span></strong></span></p>
+<p><strong>konyvtar_epito.sh tartalma</strong></p>
+<pre>#!/bin/bash<br /><br />mkdir konyvtar_alap<br />mkdir konyvtar_alap/alkonyvtar1 konyvtar_alap/alkonyvtar2 konyvtar_alap/alkonyvtar3<br /><br />mkdir konyvtar_alap/alkonyvtar1/al_alkonyvtar<br />echo "fajl neve: fajl1.txt" &gt;&gt; konyvtar_alap/alkonyvtar1/fajl1.txt<br /><br />touch fajl2.txt<br />## bele&iacute;rni nano-val: alma, barack, citrom<br /><br />touch konyvtar_alap/alkonyvtar2/fajl3.txt<br />cat &gt; konyvtar_alap/alkonyvtar2/fajl3.txt &lt;&lt;EOF<br />Ez a harmadik bele&iacute;r&aacute;si m&oacute;dszer.<br />Az első az &aacute;tir&aacute;ny&iacute;t&aacute;s.<br />A m&aacute;sodik a nano.<br />Ettől f&uuml;ggetlen&uuml;l az EOF a legjobb.<br />EOF</pre>
+<p><strong>konyvtar_rombolo.sh tartalma</strong></p>
+<pre>#!/bin/bash<br /><br />rm -rf konyvtar_alap</pre>

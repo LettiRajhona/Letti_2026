@@ -1,0 +1,23 @@
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">F&aacute;jlkezel&eacute;s &eacute;s mint&aacute;k 1. feladatsor (Z&ouml;lds&eacute;ges feladat) megold&aacute;sok:</span></strong></span></p>
+<p><strong>1. r&eacute;szfeladat</strong></p>
+<pre>mkdir z&ouml;lds&eacute;ges_feladat<br />cd z&ouml;lds&eacute;ges_feladat<br />mkdir bev&eacute;tlek kiad&aacute;sok rakt&aacute;rk&eacute;szlet v&aacute;s&aacute;rl&oacute;k<br />cd bev&eacute;telek<br />nano 2025_Q2.txt -&gt; bele&iacute;rni:<br />   r&eacute;pa 600Ft 200kg<br />   karfiol 750Ft 150kg<br />   c&eacute;kla 400Ft 330kg<br />touch 2025_Q3.txt<br />chmod 000 2025_Q3.txt<br />cat 2025_Q3.txt</pre>
+<p><strong>2. r&eacute;szfeladat</strong></p>
+<pre>cd ..<br />chmod 007 kiad&aacute;sok<br />cd kiad&aacute;sok<br />cd rakt&aacute;rk&eacute;szlet<br />touch legkev&eacute;sb&eacute;_kedvelt.txt<br />echo "ILYEN NEM L&Eacute;TEZIK" -&gt; legkev&eacute;sb&eacute;_kedvelt.txt<br />nano legjobban_kedvelt.txt -&gt; bele&iacute;rni:<br />   retek<br />   karfiol<br />   cukkini<br />   s&uuml;tőt&ouml;k<br />   dinnye<br />   alma<br />   cseresznye<br />echo "narancs" &gt;&gt; legjobban_kedvelt.txt<br />cp legjobban_kedvelt.txt biztons&aacute;gi_ment&eacute;s.txt<br />ls | wc -l</pre>
+<p><strong>3. r&eacute;szfeladat</strong></p>
+<pre>wc -m almafajt&aacute;k.txt<br />wc -w almafajt&aacute;k.txt<br />wc -l almafajt&aacute;k.txt<br />sort almafajt&aacute;k.txt &gt;&gt; rendezett_almafajt&aacute;k.txt<br />cut -c1 almafajt&aacute;k.txt | sort | uniq -c | sort -nr | head -5</pre>
+<p><strong>4. r&eacute;szfeladat</strong></p>
+<pre>wc -l leggyakoribb_v&aacute;s&aacute;rl&oacute;k.txt<br />grep "Istv&aacute;n" leggyakoribb_v&aacute;s&aacute;rl&oacute;k.txt<br />grep -E "Istv&aacute;n|&Eacute;va" leggyakoribb_v&aacute;s&aacute;rl&oacute;k.txt<br />grep -E "1[0-9]{3}Ft|2000Ft" leggyakoribb_v&aacute;s&aacute;rl&oacute;k.txt | wc -l</pre>
+<p><strong>5. r&eacute;szfeladat</strong></p>
+<pre>grep "&Eacute;va" leggyakoribb_v&aacute;s&aacute;rl&oacute;k.txt | cut -d " " -f2 | cut -d "F" -f1 | paste -sd+ - | bc</pre>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; color: #000000; background-color: #c2e0f4; font-size: 14pt;"><strong>F&aacute;jlkezel&eacute;s &eacute;s mint&aacute;k 2. feladatsor (Macsk&aacute;s feladat) megold&aacute;sok:</strong></span></p>
+<p><strong>1. r&eacute;szfeladat</strong></p>
+<pre>mkdir macska_birodalom_honfoglal&aacute;s_2025<br />cd macska_birodalom_honfoglal&aacute;s_2025<br />mkdir haditerv parancsnokok &aacute;ltal&aacute;nos<br />cd haditerv<br />nano elők&eacute;sz&uuml;letek.txt -&gt; bele&iacute;rni:<br />   100 liter joghurt<br />   50 kg kecskesajt<br />   20 kg &ouml;mlesztett sajt<br />   100 db eg&eacute;rcsapda<br />   minden katon&aacute;nak patk&aacute;nyjelmez<br />touch csata_jegyzet.txt<br />echo "A kampusz elfoglal&aacute;sa elsődleges c&eacute;lk&eacute;nt szerepel" &gt;&gt; csata_megval&oacute;s&iacute;tani.txt</pre>
+<p><strong>2. r&eacute;szfeladat</strong></p>
+<pre>cd ..<br />cd parancsnokok<br />touch Fal&aacute;nk_adatai.txt<br />chmod 000 Fal&aacute;nk_adatai.txt<br />cat Fal&aacute;nk_adatai.txt<br />grep ".*[0-9].*" Bajusz_adatai.txt<br />grep "lakcim" Bajusz_adatai.txt | cut -d " " -f3 | tr '[:lower:]' '[:upper:]'<br />wc -m Bajusz_adatai.txt<br />wc -w Bajusz_adatai.txt<br />wc -l Bajusz_adatai.txt</pre>
+<p><strong>3. r&eacute;szfeladat</strong></p>
+<pre>trap 'echo "Sikeresen bevett&uuml;k Ausztr&aacute;li&aacute;t! A kenguruk m&aacute;r a parancsnoks&aacute;gunk alatt &aacute;llnak!"' SIGINT<br />Ctrl + C<br />trap - SIGINT</pre>
+<p><strong>4. r&eacute;szfeladat</strong></p>
+<pre>sort Bajusz_adatai.txt<br />grep "szuletes" Bajusz_adatai.txt &gt;&gt; Bajusz_sz&uuml;let&eacute;si_adatok.txt<br />mv Bajusz_sz&uuml;let&eacute;si_adatok.txt Bajuszka_sz&uuml;like.txt<br />cd ..<br />cd &aacute;ltal&aacute;nos<br />cat utols&oacute;_hadművelet.txt<br />grep -E "Bajusz|Fal&aacute;nk" utols&oacute;_hadművelet.txt | wc -l<br />grep "Ny&aacute;vog&aacute;s jelsz&oacute;" utols&oacute;_hadművelet.txt | sort | uniq -c | sort -nr | wc -l<br />grep "Ny&aacute;vog&aacute;s jelsz&oacute;" utols&oacute;_hadművelet.txt | sort | uniq -c | sort -nr | head -3<br />grep -Eo "Kenguru|Eg&eacute;r" utols&oacute;_hadművelet.txt | sort | uniq -c | sort -nr</pre>
+<p><strong>5. r&eacute;szfeladat</strong></p>
+<pre>cd ..<br />chmod 700 haditerv parancsnokok &aacute;ltal&aacute;nos<br />trap 'echo "Bajusz az irod&aacute;b&oacute;l ki van tiltva"' SIGINT<br />Ctrl + C<br />trap - SIGINT</pre>

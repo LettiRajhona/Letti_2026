@@ -1,0 +1,136 @@
+<p><span style="font-size: 18pt;"><strong><span style="text-decoration: underline;">Folyamatok</span></strong></span></p>
+<p><span style="font-size: 14pt;">A Linux t&ouml;bbfeladatos oper&aacute;ci&oacute;s rendszer, a programok p&aacute;rhuzamos fut&aacute;sa időoszt&aacute;sos rendszer alapj&aacute;n t&ouml;rt&eacute;nik. Mindezen folyamat &eacute;s feladat k&uuml;l&ouml;n azonos&iacute;t&oacute;t kap, a PID-t (<em>process identificator</em>), hogy a k&uuml;l&ouml;nb&ouml;ző programp&eacute;ld&aacute;nyok k&ouml;z&ouml;tt k&uuml;l&ouml;nbs&eacute;get tudjon tenni.&nbsp;</span></p>
+<p><span style="font-size: 14pt;">A legnagyobb PID lek&eacute;rdez&eacute;s&eacute;hez a haszn&aacute;lhat&oacute; parancs: cat /proc/sys/kernel/pid_max</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18pt;"><strong><span style="text-decoration: underline;">Fut&oacute; folyamatok kezel&eacute;se</span></strong></span></p>
+<p><span style="font-size: 14pt;">Fut&oacute; folyamatok lek&eacute;r&eacute;se: <span style="color: #000000;">ps</span> parancs.</span></p>
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 14pt;">Az egyes mezők jelent&eacute;se:&nbsp;</span></strong></span></p>
+<ul>
+<li><span style="font-size: 14pt;">PID: folyamat azonos&iacute;t&oacute;ja</span></li>
+<li><span style="font-size: 14pt;">TTY: vez&eacute;rlő termin&aacute;l azonos&iacute;t&oacute;ja</span></li>
+<li><span style="font-size: 14pt;">STAT: folyamat &aacute;llapota</span></li>
+<li><span style="font-size: 14pt;">TIME: folyamat &aacute;ltal eddig elhaszn&aacute;lt processzoridő</span></li>
+</ul>
+<p><span style="font-size: 14pt;">Bővebb inform&aacute;ci&oacute;k lek&eacute;r&eacute;s&eacute;hez haszn&aacute;lhat&oacute; a ps -aux parancs a megadott kapcsol&oacute;kkal.</span></p>
+<p><span style="font-size: 14pt;">A <span style="color: #000000;">top</span> paranccsal inform&aacute;ci&oacute;kat kaphatunk a processzekről &eacute;s egy&eacute;b statisztik&aacute;kr&oacute;l a rendszerben. A top folyamatosan fut, 5 m&aacute;sodperces friss&iacute;t&eacute;sekkel, kil&eacute;pni pedig a q billentyű lenyom&aacute;s&aacute;val lehet.</span></p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline;"><span style="font-size: 18pt;"><strong>Programok előt&eacute;rben &eacute;s h&aacute;tt&eacute;rben</strong></span></span></p>
+<p><span style="font-size: 14pt;">A programok alap&eacute;rtelmezetten az előt&eacute;rben futnak. M&aacute;smilyen m&oacute;dszer, hogy az fg parancsn&eacute;v haszn&aacute;lat&aacute;val ind&iacute;tjuk el, megadva, hogy előt&eacute;rben futtassuk. A h&aacute;tt&eacute;rbeli fut&aacute;s a parancs ut&aacute;ni &amp; jel g&eacute;pel&eacute;sel t&ouml;rt&eacute;nik.&nbsp;</span></p>
+<p><span style="text-decoration: underline; font-size: 14pt; color: #000000; background-color: #c2e0f4;"><strong>Feladat:</strong></span></p>
+<p><span style="font-size: 14pt;">Ind&iacute;tsunk el egy sleep parancsot, amely 20 m&aacute;sodpercig műk&ouml;dik! Elősz&ouml;r előt&eacute;rben n&eacute;zz&uuml;k meg, hogy mi t&ouml;rt&eacute;nik. Ezut&aacute;n futtassuk h&aacute;tt&eacute;rben! Milyen k&uuml;l&ouml;nbs&eacute;get vesz&uuml;nk &eacute;szre?</span></p>
+<p><span style="font-size: 14pt;">Nohup parancs: ha a parancs el&eacute; a nohup kulcssz&oacute;t helyezz&uuml;k, akkor a program fut&aacute;sa nem szakad meg a felhaszn&aacute;l&oacute; kijelentkez&eacute;sekor. Tesztelj&uuml;k le!</span></p>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; font-size: 18pt;"><strong>Folyamatkezel&eacute;s</strong></span></p>
+<p><span style="font-size: 14pt;">Előt&eacute;rben fut&oacute; parancs befagyaszt&aacute;sa a h&aacute;tt&eacute;rben t&ouml;rt&eacute;nő ir&aacute;ny&iacute;t&aacute;shoz: Ctrl + Z kombin&aacute;ci&oacute;.</span></p>
+<p><span style="font-size: 14pt;"><strong><span style="text-decoration: underline;">Fontosabb parancsok:</span></strong></span></p>
+<ul>
+<li><span style="font-size: 14pt;">fg: h&aacute;tt&eacute;rben fut&oacute; folyamatot előt&eacute;rbe helyezhet&uuml;nk</span></li>
+<li><span style="font-size: 14pt;">bg: befagyasztott programot a h&aacute;tt&eacute;rben folytathatunk</span></li>
+<li><span style="font-size: 14pt;">jobs: belső feladatazonos&iacute;t&oacute;k lek&eacute;rdez&eacute;se</span></li>
+<li><span style="font-size: 14pt;">kill: folyamat bez&aacute;r&aacute;sa</span></li>
+<li><span style="font-size: 14pt;">time: ha egy parancs el&eacute; a time kulcssz&oacute;t &iacute;rjuk, akkor a burok az ind&iacute;tott program befejez&eacute;se ut&aacute;n statisztikai adatokat ad a feladat &aacute;ltal haszn&aacute;lt erőforr&aacute;sokr&oacute;l</span></li>
+<li><span style="font-size: 14pt;">strace: hibakeres&eacute;shez haszn&aacute;latos parancs</span></li>
+<li><span style="font-size: 14pt;">trap: bizonyos jeleket lehet c&iacute;mz&eacute;s n&eacute;lk&uuml;l k&uuml;ldeni (esem&eacute;nykezel&eacute;s)</span></li>
+</ul>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat:</span></strong></span></p>
+<p><span style="font-size: 14pt;">L&eacute;pj&uuml;nk be k&eacute;t termin&aacute;lkapcsolattal, egyik ablakban ind&iacute;tsunk el egy sz&ouml;vegszerkesztőt, majd ezt lőj&uuml;k ki a m&aacute;sik ablakb&oacute;l!</span></p>
+<p><span style="font-size: 14pt;">A Ctrl + C le&uuml;t&eacute;s&eacute;re &iacute;rjuk ki, hogy Hajr&aacute; ELTE! Ezut&aacute;n pr&oacute;b&aacute;ljuk ki, &eacute;s sz&uuml;ntess&uuml;k meg ezt a csapd&aacute;t!</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 18pt;"><strong><span style="text-decoration: underline;">Regex</span></strong></span></p>
+<p><span style="font-size: 14pt;">A regul&aacute;ris kifejez&eacute;s (r&ouml;viden regex) egy speci&aacute;lis string, amivel k&uuml;l&ouml;nb&ouml;ző sz&ouml;vegek vagy halmazuk meghat&aacute;rozhat&oacute;ak. Sz&aacute;munkra a legfontosabb feladatuk a sormanipul&aacute;ci&oacute;ban tűnhet fel, amikkel &uacute;gynevezett mint&aacute;kat keres&uuml;nk, illeszt&uuml;nk.</span></p>
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 14pt;">Speci&aacute;lis karakterek</span></strong></span></p>
+<p><span style="font-size: 14pt;">A Linuxon bel&uuml;l, keres&eacute;skor haszn&aacute;lhatunk speci&aacute;lis karaktereket, amikor illeszt&uuml;nk.</span></p>
+<ul>
+<li><span style="font-size: 14pt;">^: sor elej&eacute;n keres egyez&eacute;st</span></li>
+<li><span style="font-size: 14pt;">$: sor v&eacute;g&eacute;n keres egyez&eacute;st</span></li>
+<li><span style="font-size: 14pt;">.: egyetlen karakter behelyettes&iacute;t&eacute;se</span></li>
+<li><span style="font-size: 14pt;">*: megelőző karakter t&ouml;bb, sokf&eacute;le behelyettes&iacute;t&eacute;se</span></li>
+</ul>
+<p><span style="font-size: 14pt;">Figyelem, megt&eacute;vesztő! A Linux shellben az al&aacute;bbiak &eacute;rv&eacute;nyes&uuml;lnek, ha nem regexet haszn&aacute;lunk:</span></p>
+<ul>
+<li><span style="font-size: 14pt;">?: pontosan egy tetszőleges karakter behelyettes&iacute;t&eacute;se</span></li>
+<li><span style="font-size: 14pt;">*: 0 vagy t&ouml;bb tetszőleges karakter behelyettes&iacute;t&eacute;se</span></li>
+</ul>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 14pt;">POSIX karakteroszt&aacute;lyok (Linux regex)</span></span></strong></p>
+<ul>
+<li><span style="font-size: 14pt;">[[:alnum:]]: alfanumerikus betűk &eacute;s sz&aacute;mok (A-Z, a-z &eacute;s 0-9 intervallumok)</span></li>
+<li><span style="font-size: 14pt;">[[:alpha:]]: betűk (A-Z &eacute;s a-z)</span></li>
+<li><span style="font-size: 14pt;">[[:digit:]]: sz&aacute;mjegyek (0-9)</span></li>
+<li><span style="font-size: 14pt;">[[:lower:]]: kisbetűk</span></li>
+<li><span style="font-size: 14pt;">[[:upper:]]: nagybetűk</span></li>
+<li><span style="font-size: 14pt;">[[:space:]]: whitespace karakterek (sz&oacute;k&ouml;z, tab, &uacute;jsor...)</span></li>
+</ul>
+<p><strong><span style="text-decoration: underline;"><span style="font-size: 14pt;">Konkr&eacute;t regex kifejez&eacute;sek</span></span></strong></p>
+<ul>
+<li><span style="font-size: 14pt;">[a-z]: kisbetűs intervallum</span></li>
+<li><span style="font-size: 14pt;">[A-Z]: nagybetűs intervallum</span></li>
+<li><span style="font-size: 14pt;">[0-9]: sz&aacute;mjegy intervallum</span></li>
+<li><span style="font-size: 14pt;">a+: legal&aacute;bb egy a</span></li>
+<li><span style="font-size: 14pt;">a?: nulla vagy egy a</span></li>
+<li><span style="font-size: 14pt;">a{2}: 2 darab a</span></li>
+<li><span style="font-size: 14pt;">a{2, }: legal&aacute;bb 2 darab a</span></li>
+<li><span style="font-size: 14pt;">a{, 2}: legfeljebb 2 darab a</span></li>
+<li><span style="font-size: 14pt;">a{1, 5}: 1, 2, 3, 4 vagy 5 darab a</span></li>
+<li><span style="font-size: 14pt;">(ab|cd): ab vagy cd</span></li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline; font-size: 18pt;"><strong>Sorok manipul&aacute;ci&oacute;ja, cs&ouml;vez&eacute;s&nbsp;</strong></span></p>
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 14pt;">Haszn&aacute;land&oacute; parancsok</span></strong></span></p>
+<ul>
+<li><span style="font-size: 14pt;">wc: hivatalosan <em>word count</em>, szavak, sorok, karakterek, b&aacute;jtok sz&aacute;ml&aacute;l&aacute;s&aacute;ra alkalmas a kapcsol&oacute;ival (-w, -l, -m, -c)</span></li>
+</ul>
+<pre>cat fajl.txt | wc -l ## sorok sz&aacute;ma a fajl.txt-ben<br />pwd | wc -m ## karakterek sz&aacute;ma az aktu&aacute;lis mappa el&eacute;r&eacute;si &uacute;tvonal&aacute;ban</pre>
+<ul>
+<li><span style="font-size: 14pt;">cut: sor feldarabol&aacute;sa megadott szempontok szerint (-d: mezőelv&aacute;laszt&oacute; karakter, -f: mező, -c: karakter)</span></li>
+</ul>
+<pre>cat fajl.txt | cut -d " " -f1 ## a sor első szav&aacute;t kiv&aacute;gjuk a sz&oacute;k&ouml;z&ouml;k ment&eacute;n<br />cat fajl.txt | cut -c1-3 ## a sor első h&aacute;rom karakter&eacute;t kiv&aacute;gjuk</pre>
+<ul>
+<li><span style="font-size: 14pt;">sort: rendez&eacute;sek megadott kapcsol&oacute;k alapj&aacute;n, alap&eacute;rtelmezett az &aacute;b&eacute;c&eacute; szerinti rendez&eacute;s (-r: visszafele rendez, -n: numerikusan rendez)</span></li>
+</ul>
+<pre>sort -r fajl.txt</pre>
+<ul>
+<li><span style="font-size: 14pt;">head: f&aacute;jl soraib&oacute;l az első n&eacute;h&aacute;ny kiv&aacute;laszt&aacute;sa</span></li>
+</ul>
+<pre>ls -l | head -5 ## első 5 sor kiv&aacute;laszt&aacute;sa</pre>
+<ul>
+<li><span style="font-size: 14pt;">tail: f&aacute;jl soraib&oacute;l az utols&oacute; n&eacute;h&aacute;ny kiv&aacute;laszt&aacute;sa</span></li>
+</ul>
+<pre>ls -l | tail -3 ## utols&oacute; 3 sor kiv&aacute;laszt&aacute;sa</pre>
+<ul>
+<li><span style="font-size: 14pt;">tr: <em>translate</em>, karakterek behelyettes&iacute;t&eacute;s&eacute;re, cser&eacute;j&eacute;re szolg&aacute;l</span></li>
+</ul>
+<pre>echo "mondat" | tr 'a-z' 'A-Z' ## kisbetűs karakterek cser&eacute;je nagybetűsre</pre>
+<ul>
+<li><span style="font-size: 14pt;">grep: sz&ouml;vegkeres&eacute;s, mintailleszt&eacute;s parancsa, kiterjesztett verzi&oacute;ja az egrep vagy grep -E, amellyel regex kifejez&eacute;sek haszn&aacute;lhat&oacute;k</span></li>
+</ul>
+<pre>cat fajl.txt | grep "alma" ## alma sz&oacute;t tartalmaz&oacute; sorok keres&eacute;se a f&aacute;jlban<br />cat fajl.txt | grep -E "(ab|cd)" ## olyan karakterl&aacute;nc keres&eacute;se, amely vagy az ab-t vagy a cd-t tartalmazza</pre>
+<ul>
+<li><span style="font-size: 14pt;">sed: <em>stream editor</em>, soronk&eacute;nt dolgoz&oacute; sz&ouml;vegszerkesztő, amellyel keresni, t&ouml;r&ouml;lni, cser&eacute;lni lehet elemeket a sorokb&oacute;l</span></li>
+<li><span style="font-size: 14pt;">tac: visszafel&eacute; &iacute;rja ki a f&aacute;jlt</span></li>
+</ul>
+<p><span style="text-decoration: underline; background-color: #c2e0f4; font-size: 14pt;"><strong>Feladat 1 (szűrők f&aacute;jlban):</strong></span></p>
+<p><span style="font-size: 14pt;">WinSCP seg&iacute;ts&eacute;g&eacute;vel h&uacute;zzuk &aacute;t a minden.txt f&aacute;jlt egy tetszőleges k&ouml;nyvt&aacute;runkba a szerveren, amelyben dolgozni fogunk.</span></p>
+<p><span style="font-size: 14pt;">&Iacute;rassuk ki, h&aacute;ny karaktert, sz&oacute;t &eacute;s sort tartalmaz a f&aacute;jl!</span></p>
+<p><span style="font-size: 14pt;">Rendezz&uuml;k n&ouml;vekvő sorrendbe a sorokat! M&aacute;sodik l&eacute;p&eacute;sk&eacute;nt ism&eacute;tlőd&eacute;s alapj&aacute;n rendezz&uuml;k őket cs&ouml;kkenő sorrendbe, &eacute;s &iacute;ratjuk ki a z eredm&eacute;nyt. Melyik a harmadik leggyakoribb előfordul&aacute;s&uacute; sor?</span></p>
+<p><span style="font-size: 14pt;">Sz&aacute;moljuk meg, hogy h&aacute;ny olyan sort tartalmaz a f&aacute;jl, amelyben szerepel az alma sz&oacute;! H&aacute;ny olyan sor van, amely csak ezt a sz&oacute;t tartalmazza?</span></p>
+<p><span style="font-size: 14pt;">&Iacute;rassuk ki azon sorokat, amelyben csak sz&aacute;mok vagy az &ouml;t leggyakoribb matematikai oper&aacute;tor (+, -, *, /, ^) tal&aacute;lhat&oacute;!</span></p>
+<p><span style="font-size: 14pt;">Cser&eacute;lj&uuml;k ki a f&aacute;jl karaktereit nagybetűsre, majd ezt ments&uuml;k el a minden_nagybetus.txt f&aacute;jlba!</span></p>
+<p><span style="font-size: 14pt;">Mely sorok kezdődnek betűvel, &eacute;s v&eacute;gződnek sz&aacute;mmal? H&aacute;ny darab van, amely pontosan 10 karaktert tartalmaz?</span></p>
+<p><span style="font-size: 14pt;">&Iacute;rassuk ki a sorokat visszafel&eacute;!</span></p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat 2 (szűrők &aacute;ltal&aacute;nosan):</span></strong></span></p>
+<p><span style="font-size: 14pt;">Sz&aacute;moljuk meg az aktu&aacute;lis k&ouml;nyvt&aacute;rban l&eacute;vő bejegyz&eacute;sek sz&aacute;m&aacute;t! H&aacute;ny k&ouml;nyvt&aacute;rat &eacute;s h&aacute;ny f&aacute;jlt tal&aacute;lunk? Mennyi a rejtett k&ouml;nyvt&aacute;rak sz&aacute;ma?</span></p>
+<p><span style="font-size: 14pt;">List&aacute;zzuk ki az aktu&aacute;lis k&ouml;nyvt&aacute;r alk&ouml;nyvt&aacute;rait! Rekurz&iacute;van menj&uuml;nk v&eacute;gig az alk&ouml;nyvt&aacute;rakon, &eacute;s minden gyerekk&ouml;nyvt&aacute;rat list&aacute;zzunk ki!</span></p>
+<p><span style="font-size: 14pt;">Az &ouml;sszes alk&ouml;nyvt&aacute;rban adjuk &ouml;ssze, h&aacute;ny f&aacute;jlt tartalmaznak.</span></p>
+<p><span style="font-size: 14pt;">Melyik a legnagyobb f&aacute;jl az aktu&aacute;lis k&ouml;nyvt&aacute;rban? Milyen jogosults&aacute;gokkal rendelkezik?</span></p>
+<p><span style="font-size: 14pt;">Keress&uuml;k meg az aktu&aacute;lis k&ouml;nyvt&aacute;rban az &ouml;sszes f&aacute;jlt, aminek a v&eacute;ge log-gal v&eacute;gződik! </span></p>
+<p><span style="font-size: 14pt;">H&aacute;ny f&aacute;jl tartalmazza a TODO sz&oacute;t?&nbsp;</span></p>
+<p><span style="font-size: 14pt;">List&aacute;zzuk ki az &ouml;sszes .txt f&aacute;jlt, amelyben megtal&aacute;lhat&oacute; a 2025 sz&oacute;!</span></p>
+<p><span style="font-size: 14pt;">List&aacute;zzuk ki a bejelentkezett felhaszn&aacute;l&oacute;k adatait! V&aacute;gjuk ki az azonos&iacute;t&oacute;kat, &eacute;s t&aacute;roljuk el őket az azon.txt f&aacute;jlban!</span></p>
+<p><span style="font-size: 14pt;">H&aacute;ny folyamat fut az aktu&aacute;lis felhaszn&aacute;l&oacute; alatt? Melyik az a 10 folyamat, amely a legt&ouml;bb mem&oacute;ri&aacute;t fogyasztja?&nbsp;</span></p>
+<p><span style="font-size: 14pt;">Ments&uuml;k ki egy portok.txt f&aacute;jlba az &ouml;sszes nyitott portot &eacute;s a hozz&aacute;juk tartoz&oacute; folyamatokat!</span></p>
+<p><span style="text-decoration: underline; background-color: #c2e0f4;"><strong><span style="font-size: 14pt; background-color: #c2e0f4;">Feladat 3 (regex kifejez&eacute;sek):</span></strong></span></p>
+<p><span style="font-size: 14pt;">Keress&uuml;nk olyan &aacute;llom&aacute;nyokat, amelyekben legal&aacute;bb kettő darab w jogosults&aacute;g tal&aacute;lhat&oacute;!</span></p>
+<p><span style="font-size: 14pt;">Keress&uuml;nk olyan f&aacute;jlokat, amelyek nev&eacute;ben egym&aacute;s ut&aacute;n kettő darab a, ut&aacute;na pedig bc vagy de kifejez&eacute;s tal&aacute;lhat&oacute;!</span></p>
+<p><span style="font-size: 14pt;">Mely f&aacute;jlok azok, amik egyetlen betűvel kezdődnek, &eacute;s ut&aacute;na csak sz&aacute;mot tartalmaz (kiterjeszt&eacute;s .txt)?</span></p>
+<p><span style="font-size: 14pt;">Mely f&aacute;jlok kezdődnek sz&aacute;mmal, majd v&eacute;gződnek egy darab betűvel (kiterjeszt&eacute;s .txt)?</span></p>
+<p><span style="font-size: 14pt;">H&aacute;ny darab olyan f&aacute;jl tal&aacute;lhat&oacute; a főmapp&aacute;ban, amely legal&aacute;bb 2, maximum 5 darab a-t tartalmaz?</span></p>
