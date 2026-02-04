@@ -28,7 +28,7 @@
 <pre>#include &lt;stdio.h&gt;<br />#include &lt;sys/types.h&gt;<br />#include &lt;unistd.h&gt;<br /><br />int main() {<br />   fork();<br /><br />   printf("Hello World!\n");<br /><br />   return 0;<br />}</pre>
 <p><span style="font-size: 14pt;">Az eredm&eacute;ny:</span></p>
 <pre>Hello World!<br />Hello World!</pre>
-<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.instructure.com/courses/13939147/files/333256283/preview" alt="output-fork-function.webp" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/13939147/files/333256283" data-api-returntype="File" /></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.instructure.com/courses/13939147/files/333256283/preview" alt="output-fork-function.webp" width="60%" height="60%" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/13939147/files/333256283" data-api-returntype="File" /></p>
 <p><span style="font-size: 14pt;">Mivel minden esetben duplik&aacute;ci&oacute; t&ouml;rt&eacute;nik, ez&eacute;rt a 2 n-szeres hatv&aacute;nyak&eacute;nt hivatkozhatunk a folyamatok darabsz&aacute;m&aacute;ra, ahol n a fork() rendszerh&iacute;v&aacute;sok sz&aacute;m&aacute;t jel&ouml;li. Ha az előbbi programunkban nem egyetlen fork(), hanem h&aacute;rom kap helyet, akkor a kimeneten 8 darab "Hello World!" ki&iacute;r&aacute;s fog szerepelni.</span></p>
 <p><span style="font-size: 14pt;">A forkol&aacute;st gyakran hibakezel&eacute;s k&ouml;veti. Egy h&aacute;rom&aacute;g&uacute; if-ben c&eacute;lszerű megvizsg&aacute;lni a kapott visszat&eacute;r&eacute;si &eacute;rt&eacute;ket, &iacute;gy a hib&aacute;k &eacute;s a sz&uuml;lő-gyerek viszontags&aacute;gok felder&iacute;thetők.</span></p>
 <pre>pid_t child = fork();<br /><br />if (child &lt; 0) {<br />   perror("The fork calling was not successful\n"); // &lt;errno.h&gt;-ban tal&aacute;lhat&oacute; hibakezel&eacute;s<br />   exit(1); // 1-es hibak&oacute;ddal kil&eacute;p&uuml;nk<br />} else if (child &gt; 0) {<br />   printf("Parent process is running\n");<br />} else {<br />   printf("Child process is running\n");<br />}</pre>
@@ -60,41 +60,116 @@
 </ul>
 <pre>void handler(int signal) {<br />   printf("Signal received\n");<br />}<br /><br />int main() {<br />   signal(SIGINT, handler); // Ctrl+C kezel&eacute;se<br />   printf("Waiting for signal...\n");<br /><br />   pause();<br /><br />   printf("Finished!\n");<br />   return 0;<br />}</pre>
 <p><span style="font-size: 14pt;">A st&aacute;tuszra vonatkoz&oacute; makr&oacute;kat egy t&aacute;bl&aacute;zatban &ouml;sszefoglalhatjuk funkci&oacute;ik szerint. Ezek a makr&oacute;k a &lt;sys/wait.h&gt; headerben tal&aacute;lhat&oacute;ak, &eacute;s leggyakrabban arra haszn&aacute;lhat&oacute;k, hogy kider&iacute;ts&uuml;k, a gyerekfolyamat hogyan fejeződ&ouml;tt be.</span></p>
-<table style="border-collapse: collapse; width: 100%; height: 280px;" border="1">
+<table style="border-collapse: collapse; width: 100%; height: 571.852px;" border="1">
 <tbody>
-<tr style="height: 29px;">
-<td style="width: 27.3876%; height: 29px;"><span style="font-size: 14pt;">WIFEXITED(status)</span></td>
-<td style="width: 72.6124%; height: 29px;"><span style="font-size: 14pt;">Igaz &eacute;rt&eacute;ket ad, ha a gyerek hiba n&eacute;lk&uuml;l l&eacute;pett ki (exit()-tel vagy main() f&uuml;ggv&eacute;nyből).</span></td>
+<tr style="height: 88.9766px;">
+<td style="width: 27.3876%; height: 88.9766px;"><span style="font-size: 14pt;">WIFEXITED(status)</span></td>
+<td style="width: 72.6124%; height: 88.9766px;"><span style="font-size: 14pt;">Igaz &eacute;rt&eacute;ket ad, ha a gyerek hiba n&eacute;lk&uuml;l l&eacute;pett ki (exit()-tel vagy main() f&uuml;ggv&eacute;nyből).</span></td>
 </tr>
-<tr style="height: 29px;">
-<td style="width: 27.3876%; height: 29px;"><span style="font-size: 14pt;">WEXITSTATUS(status)</span></td>
-<td style="width: 72.6124%; height: 29px;"><span style="font-size: 14pt;">Visszaadja a kil&eacute;p&eacute;si k&oacute;dot (pl. return &eacute;rt&eacute;k a main() f&uuml;ggv&eacute;ny v&eacute;g&eacute;n).</span></td>
+<tr style="height: 60.9844px;">
+<td style="width: 27.3876%; height: 60.9844px;"><span style="font-size: 14pt;">WEXITSTATUS(status)</span></td>
+<td style="width: 72.6124%; height: 60.9844px;"><span style="font-size: 14pt;">Visszaadja a kil&eacute;p&eacute;si k&oacute;dot (pl. return &eacute;rt&eacute;k a main() f&uuml;ggv&eacute;ny v&eacute;g&eacute;n).</span></td>
 </tr>
-<tr style="height: 29px;">
-<td style="width: 27.3876%; height: 29px;"><span style="font-size: 14pt;">WIFSIGNALED(status)</span></td>
-<td style="width: 72.6124%; height: 29px;"><span style="font-size: 14pt;">Igazzal t&eacute;r vissza, ha a gyerekfolyamat jel miatt &aacute;llt le.</span></td>
+<tr style="height: 60.9844px;">
+<td style="width: 27.3876%; height: 60.9844px;"><span style="font-size: 14pt;">WIFSIGNALED(status)</span></td>
+<td style="width: 72.6124%; height: 60.9844px;"><span style="font-size: 14pt;">Igazzal t&eacute;r vissza, ha a gyerekfolyamat jel miatt &aacute;llt le.</span></td>
 </tr>
-<tr style="height: 29px;">
-<td style="width: 27.3876%; height: 29px;"><span style="font-size: 14pt;">WTERMSIG(status)</span></td>
-<td style="width: 72.6124%; height: 29px;"><span style="font-size: 14pt;">Melyik jel miatt &aacute;llt le.</span></td>
+<tr style="height: 32.9922px;">
+<td style="width: 27.3876%; height: 32.9922px;"><span style="font-size: 14pt;">WTERMSIG(status)</span></td>
+<td style="width: 72.6124%; height: 32.9922px;"><span style="font-size: 14pt;">Melyik jel miatt &aacute;llt le.</span></td>
 </tr>
-<tr style="height: 77px;">
-<td style="width: 27.3876%; height: 77px;"><span style="font-size: 14pt;">WCOREDUMP(status)</span></td>
-<td style="width: 72.6124%; height: 77px;"><span style="font-size: 14pt;">Igaz &eacute;rt&eacute;kű, ha a folyamat core dumpot k&eacute;sz&iacute;tett (snapshot a program munkamem&oacute;ri&aacute;j&aacute;r&oacute;l, processzorregisztereiről, abban az esetben, ha a program &ouml;sszeomlik vagy le&aacute;ll).</span></td>
+<tr style="height: 172.953px;">
+<td style="width: 27.3876%; height: 172.953px;"><span style="font-size: 14pt;">WCOREDUMP(status)</span></td>
+<td style="width: 72.6124%; height: 172.953px;"><span style="font-size: 14pt;">Igaz &eacute;rt&eacute;kű, ha a folyamat core dumpot k&eacute;sz&iacute;tett (snapshot a program munkamem&oacute;ri&aacute;j&aacute;r&oacute;l, processzorregisztereiről, abban az esetben, ha a program &ouml;sszeomlik vagy le&aacute;ll).</span></td>
 </tr>
-<tr style="height: 29px;">
-<td style="width: 27.3876%; height: 29px;"><span style="font-size: 14pt;">WIFSTOPPED(status)</span></td>
-<td style="width: 72.6124%; height: 29px;"><span style="font-size: 14pt;">Igazat ad, ha a gyerek stop szign&aacute;l miatt &aacute;llt meg.</span></td>
+<tr style="height: 60.9844px;">
+<td style="width: 27.3876%; height: 60.9844px;"><span style="font-size: 14pt;">WIFSTOPPED(status)</span></td>
+<td style="width: 72.6124%; height: 60.9844px;"><span style="font-size: 14pt;">Igazat ad, ha a gyerek stop szign&aacute;l miatt &aacute;llt meg.</span></td>
 </tr>
-<tr style="height: 29px;">
-<td style="width: 27.3876%; height: 29px;"><span style="font-size: 14pt;">WSTOPSIG(status)</span></td>
-<td style="width: 72.6124%; height: 29px;"><span style="font-size: 14pt;">Melyik stop jel miatt &aacute;llt meg.</span></td>
+<tr style="height: 32.9922px;">
+<td style="width: 27.3876%; height: 32.9922px;"><span style="font-size: 14pt;">WSTOPSIG(status)</span></td>
+<td style="width: 72.6124%; height: 32.9922px;"><span style="font-size: 14pt;">Melyik stop jel miatt &aacute;llt meg.</span></td>
 </tr>
-<tr style="height: 29px;">
-<td style="width: 27.3876%; height: 29px;"><span style="font-size: 14pt;">WIFCONTINUED(status)</span></td>
-<td style="width: 72.6124%; height: 29px;"><span style="font-size: 14pt;">Igazzal t&eacute;r vissza, amennyiben a folyamat folytat&oacute;dott egy SIGCONT jel ut&aacute;n.</span></td>
+<tr style="height: 60.9844px;">
+<td style="width: 27.3876%; height: 60.9844px;"><span style="font-size: 14pt;">WIFCONTINUED(status)</span></td>
+<td style="width: 72.6124%; height: 60.9844px;"><span style="font-size: 14pt;">Igazzal t&eacute;r vissza, amennyiben a folyamat folytat&oacute;dott egy SIGCONT jel ut&aacute;n.</span></td>
 </tr>
 </tbody>
 </table>
-<p>A waitpid() f&uuml;ggv&eacute;ny harmadik argumentimak&eacute;nt megkapott opci&oacute;k r&eacute;szben k&uuml;l&ouml;nf&eacute;le flagek rendelhetők hozz&aacute;.&nbsp;</p>
+<p><span style="font-size: 14pt;">A waitpid() f&uuml;ggv&eacute;ny harmadik argumentumak&eacute;nt megkapott opci&oacute;k r&eacute;szben k&uuml;l&ouml;nf&eacute;le flagek rendelhetők hozz&aacute;.&nbsp;</span></p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 30.0533%;"><span style="font-size: 14pt;">0</span></td>
+<td style="width: 69.9467%;"><span style="font-size: 14pt;">Alap&eacute;rtelmezett &eacute;rt&eacute;k. Blokkol&oacute; v&aacute;rakoz&aacute;s a gyerek befejeződ&eacute;s&eacute;re.</span></td>
+</tr>
+<tr>
+<td style="width: 30.0533%;"><span style="font-size: 14pt;">WNOHANG</span></td>
+<td style="width: 69.9467%;"><span style="font-size: 14pt;">Nem blokkol&oacute; utas&iacute;t&aacute;s, ha a gyerek m&eacute;g fut, automatikusan 0 &eacute;rt&eacute;kkel t&eacute;r&uuml;nk vissza.</span></td>
+</tr>
+<tr>
+<td style="width: 30.0533%;"><span style="font-size: 14pt;">WUNTRACED</span></td>
+<td style="width: 69.9467%;"><span style="font-size: 14pt;">Igaz &eacute;rt&eacute;ket ad, ha a gyerek meg&aacute;llt valamilyen szign&aacute;l hat&aacute;s&aacute;ra, norm&aacute;l WIFSTOPPED eset&eacute;n.</span></td>
+</tr>
+<tr>
+<td style="width: 30.0533%;"><span style="font-size: 14pt;">WCONTINUED</span></td>
+<td style="width: 69.9467%;"><span style="font-size: 14pt;">Igaz &eacute;rt&eacute;ket ad, ha a folyamat folytat&oacute;dik.</span></td>
+</tr>
+<tr>
+<td style="width: 30.0533%;"><span style="font-size: 14pt;">WEXITED</span></td>
+<td style="width: 69.9467%;"><span style="font-size: 14pt;">Csak a befejezett folyamatokra v&aacute;r. A modern Linux rendszereken haszn&aacute;lhat&oacute;.</span></td>
+</tr>
+<tr>
+<td style="width: 30.0533%;"><span style="font-size: 14pt;">__WALL, __WCLONE</span></td>
+<td style="width: 69.9467%;"><span style="font-size: 14pt;">Speci&aacute;lis flagek t&ouml;bb sz&aacute;l &eacute;s folyamat kezel&eacute;s&eacute;re.</span></td>
+</tr>
+</tbody>
+</table>
 <p>&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 18pt;">Z&aacute;rol&aacute;s</span></strong></span></p>
+<p><span style="font-size: 14pt;">A p&aacute;rhuzamos &eacute;s t&ouml;bbsz&aacute;l&uacute; programoz&aacute;s egy meghat&aacute;roz&oacute; eleme a z&aacute;rol&aacute;s. Amikor t&ouml;bb sz&aacute;l vagy t&ouml;bb folyamat egyidejűleg f&eacute;r hozz&aacute; ugyanahhoz az osztott adathoz, amely lehet egy t&ouml;mb, egy f&aacute;jl stb., akkor az adatok inkonzisztenss&eacute; v&aacute;lthatnak. T&ouml;bbsz&ouml;ri hozz&aacute;f&eacute;r&eacute;s eset&eacute;n nincs meghat&aacute;rozva a hozz&aacute;f&eacute;r&eacute;s sorrendje, a v&eacute;letlenszerűs&eacute;g pedig sz&aacute;mos, nehezen reproduk&aacute;lhat&oacute; adathib&aacute;t eredm&eacute;nyezhet nemdeterminisztikus m&oacute;don. Ezeket az eseteket versenyhelyzetnek nevezz&uuml;k.</span></p>
+<p><span style="font-size: 14pt;">B&aacute;r &aacute;ltal&aacute;ban az ehhez hasonl&oacute; probl&eacute;m&aacute;kat sz&aacute;lkezel&eacute;sn&eacute;l tapasztalj&aacute;k, a folyamatok sor&aacute;n is ad&oacute;dhatnak gondok, hiszen megosztott erőforr&aacute;sokkal dolgozhatnak.</span></p>
+<p><span style="font-size: 14pt;">Kritikus szakasznak nevezz&uuml;k azokat a k&oacute;dr&eacute;szleteket, amelyet egyszerre kiz&aacute;r&oacute;lag egy folyamat hajthat v&eacute;gre. Ahol nem engedhetj&uuml;k meg, hogy t&ouml;bbsz&ouml;ri f&aacute;jlba &iacute;r&aacute;s, v&aacute;ltoz&oacute; m&oacute;dos&iacute;t&aacute;s vagy adatstrukt&uacute;ra m&oacute;dos&iacute;t&aacute;s t&ouml;rt&eacute;njen, ott a z&aacute;rol&aacute;s (lock haszn&aacute;lat) elengedhetetlen. Ehhez az &lt;fcntl.h&gt; header f&aacute;jlt haszn&aacute;ljuk.</span></p>
+<p><span style="font-size: 14pt;">A flock() f&uuml;ggv&eacute;ny az egyik legegyszerűbb z&aacute;rol&aacute;st biztos&iacute;tja. Első param&eacute;terek&eacute;nt &aacute;t kell adni a f&aacute;jl megnyit&aacute;s&aacute;nak visszat&eacute;r&eacute;si &eacute;rt&eacute;k&eacute;t, majd egy f&aacute;jlz&aacute;rol&aacute;si t&iacute;pust.</span></p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 17.2874%;">LOCK_SH</td>
+<td style="width: 82.8902%;">Megosztott z&aacute;rol&aacute;s. T&ouml;bb folyamat is olvashatja egyszerre a f&aacute;jlt.</td>
+</tr>
+<tr>
+<td style="width: 17.2874%;">LOCK_EX</td>
+<td style="width: 82.8902%;">Kiz&aacute;r&oacute;lagos z&aacute;rol&aacute;s. Egyszerre csak egy folyamat haszn&aacute;lhatja a f&aacute;jlt.</td>
+</tr>
+<tr>
+<td style="width: 17.2874%;">LOCK_UN</td>
+<td style="width: 82.8902%;">Z&aacute;rol&aacute;s felold&aacute;sa.</td>
+</tr>
+<tr>
+<td style="width: 17.2874%;">LOCK_NB</td>
+<td style="width: 82.8902%;">Nem v&aacute;rakozik, ha nem tudja megszerezni a kulcsot a z&aacute;rol&aacute;s felold&aacute;s&aacute;hoz. Ekkor hib&aacute;val t&eacute;r vissza.</td>
+</tr>
+</tbody>
+</table>
+<p><span style="font-size: 14pt;">A k&ouml;vetkező mintak&oacute;d egy kiz&aacute;r&oacute;lagos z&aacute;rol&aacute;st val&oacute;s&iacute;t meg. Kettő folyamattal dolgozunk a main() f&uuml;ggv&eacute;ny eleji forkol&aacute;s &aacute;ltal, majd kiz&aacute;r&oacute;lagos z&aacute;rol&aacute;st adunk a megnyitott f&aacute;jlra. Ez azt jelenti, hogy a sz&uuml;lő &eacute;s gyerek folyamat fut&aacute;s&aacute;t szab&aacute;lyozzuk, &eacute;s nem engedj&uuml;k, hogy a f&aacute;jlba &iacute;rt eredm&eacute;nyt a kettő sz&ouml;veg v&eacute;letlenszerű permut&aacute;ci&oacute;ja legyen.</span></p>
+<pre>#include &lt;fcntl.h&gt;<br />#include &lt;unistd.h&gt;<br />#include &lt;string.h&gt;<br />#include &lt;sys/file.h&gt;<br /><br />int main() {<br />   pid_t pid = fork();<br />   <br />   int file = open("data.txt", O_WRONLY | O_APPEND);<br />   flock(file, LOCK_EX);<br /><br />   const char *message1 = "Hello World from child process.\n";<br />   const char *message2 = "Hello World from parent process.\n";<br /><br />   if (pid == 0) {<br />      write(file, message1, strlen(message1));<br />   } else if (pid &gt; 0) {<br />      write(file, message2, strlen(message2));<br />   }<br /><br />   flock(file, LOCK_UN);<br />   close(file);<br /><br />   return 0;<br />}</pre>
+<p><span style="font-size: 14pt;">A z&aacute;rol&aacute;s garant&aacute;lja az atomi &iacute;r&aacute;st, azonban nem garant&aacute;lja a sz&uuml;lő- &eacute;s gyerekfolyamat &iacute;r&aacute;s&aacute;nak sorrendj&eacute;t.&nbsp;</span></p>
+<p><span style="font-size: 14pt;">Egy bonyolultabb, finomhangoltabb f&aacute;jlz&aacute;rol&aacute;st val&oacute;s&iacute;t meg az fcntl() f&uuml;ggv&eacute;ny. Az fcntl() egy flock strukt&uacute;r&aacute;t haszn&aacute;l, amely a f&aacute;jlz&aacute;rol&aacute;s hozz&aacute;f&eacute;r&eacute;sek koordin&aacute;l&aacute;s&aacute;ra szolg&aacute;l. A flock a k&ouml;vetkező mezőkkel rendelkezik:</span></p>
+<pre>struct flock {<br />   short l_type; // z&aacute;rol&aacute;s t&iacute;pusa<br />   short l_whence; // f&aacute;jlmutat&oacute;<br />   off_t l_start; // kezdőpoz&iacute;ci&oacute;<br />   off_t l_len; // z&aacute;rol&aacute;s hossza<br />   pid_t l_pid; // z&aacute;rol&oacute; folyamat PID-je<br />}</pre>
+<p><span style="font-size: 14pt;">Az l_type a z&aacute;rol&aacute;s t&iacute;pus&aacute;t adja meg. Megk&uuml;l&ouml;nb&ouml;ztethet&uuml;nk olvas&aacute;si z&aacute;rol&aacute;st (F_RDLCK), amely eset&eacute;ben az olvas&aacute;st t&ouml;bb folyamat is v&eacute;grehajthatja azonos időben. &Iacute;r&aacute;si z&aacute;rol&aacute;st (F_WRLCK), ahol csak egy &iacute;r&oacute; folyamat lehet, minden m&aacute;s &iacute;r&aacute;s-olvas&aacute;si művelet a folyamatokban blokkolt. Az F_UNLCK a z&aacute;rol&aacute;s felold&aacute;sa, ezut&aacute;n a f&aacute;jl &uacute;jra el&eacute;rhető t&ouml;bb processz sz&aacute;m&aacute;ra.</span></p>
+<p><span style="font-size: 14pt;">Az l_whence mező a f&aacute;jl m&oacute;dos&iacute;t&aacute;s&aacute;nak kezdőpoz&iacute;ci&oacute;j&aacute;&eacute;rt felel. A 2. gyakorlati anyagban taglalt SEEK_SET a f&aacute;jl elej&eacute;ről, a SEEK_CUR a jelenlegi f&aacute;jlmutat&oacute;t&oacute;l, a SEEK_END a f&aacute;jl v&eacute;g&eacute;től sz&aacute;m&iacute;tja a kezdőpoz&iacute;ci&oacute;t.&nbsp;</span></p>
+<p><span style="font-size: 14pt;">Az l_start mező a z&aacute;rol&aacute;s kezdőpoz&iacute;ci&oacute;j&aacute;nak eltol&aacute;sa az l_whence-hez k&eacute;pest. Az l_len a lockolt szakasz hossz&aacute;t tartalmazza, amely abban az esetben vehet fel 0 &eacute;rt&eacute;ket, ha a z&aacute;rol&aacute;s a f&aacute;jl v&eacute;g&eacute;től a kezdőpontig tart. Ergo, ha az eg&eacute;sz f&aacute;jlra vonatkozik a z&aacute;rol&aacute;s. Az l_pid az aktu&aacute;lis z&aacute;rol&oacute; folyamat azonos&iacute;t&oacute;j&aacute;t jel&ouml;li.</span></p>
+<p><span style="font-size: 14pt;">Az fcntl(int file, int cmd, struct flock *lock) f&uuml;ggv&eacute;ny első param&eacute;terk&eacute;nt egy olyan eg&eacute;sz sz&aacute;mot kap, amelyet az open rendszerh&iacute;v&aacute;ssal egy f&aacute;jl megnyit&aacute;sa ut&aacute;n kapunk. A cmd param&eacute;ter azt mondja meg, milyen műveletet akarunk v&eacute;gezni a f&aacute;jl le&iacute;r&oacute;j&aacute;val, vagyis a z&aacute;rol&aacute;ssal. Az F_GETLK lek&eacute;rdezi, hogy a megadott tartom&aacute;ny z&aacute;rolhat&oacute;-e. Ha nem z&aacute;rolt, akkor &eacute;rtelemszerűen a harmadik param&eacute;terben megadott lock strukt&uacute;ra l_type mezőj&eacute;nek &eacute;rt&eacute;ke F_UNLCK. Ha z&aacute;rolt, visszaadja, ki &eacute;s milyen m&oacute;don z&aacute;rolta. Az F_SETLK nem blokkol&oacute; z&aacute;rol&aacute;st &eacute;s felold&aacute;st val&oacute;s&iacute;t meg. Ha a z&aacute;rol&aacute;s nem siker&uuml;l &ndash; mert m&aacute;r m&aacute;s valaki z&aacute;rolja az adott f&aacute;jlt valamilyen m&oacute;don &ndash;, hib&aacute;t &eacute;s -1 &eacute;rt&eacute;ket ad vissza. Az F_SETLKW ezzel szemben v&aacute;rakozik m&aacute;s folyamat z&aacute;rol&aacute;sa eset&eacute;n. Fontos, hogy az fcntl() egy f&aacute;jlr&eacute;szt is k&eacute;pes z&aacute;rolni, nem csak az eg&eacute;sz f&aacute;jlt.</span></p>
+<p><span style="font-size: 14pt;">N&eacute;zz&uuml;nk r&aacute; egy mintak&oacute;dra. Ebben k&eacute;t folyamattal dolgozunk, &eacute;s mindk&eacute;t folyamat saj&aacute;t sz&ouml;veggel rendelkezik, amelyet a data.txt f&aacute;jlba &iacute;r. Azonban z&aacute;rol&aacute;st haszn&aacute;lunk: a lock seg&iacute;ts&eacute;g&eacute;vel mindk&eacute;t folyamat le&iacute;rhatja 10-szer a megadott &uuml;zenet&eacute;t megszak&iacute;t&aacute;s n&eacute;lk&uuml;l. Az &iacute;r&aacute;s előtt mindegyik folyamat lez&aacute;rja a f&aacute;jlt, majd fel is oldja.</span></p>
+<pre>#include &lt;sys/file.h&gt;<br />#include &lt;fcntl.h&gt;<br />#include &lt;unistd.h&gt;<br />#include &lt;string.h&gt;<br /><br />int main() {<br />   pid_t pid = fork;<br /><br />   const char *message1 = "Hello World from child process.\n";<br />   const char *message2 = "Hello World from parent process.\n";<br /><br />   struct flock lock_data;<br />   lock_data.l_whence = SEEK_SET;<br />   lock_data.l_start = 0;<br />   lock_data.l_len = 0;<br /><br />   int lock_result = 0;<br />   int file = open("data.txt", O_WRONLY | O_APPEND);<br /><br />   if (pid &gt; 0) {<br /> &nbsp; &nbsp; &nbsp;for (int i = 0; i &lt; 10; i++) {<br />         lock_data.l_pid = getpid();<br />         lock_data.l_type = F_WRLCK;<br /><br />  &nbsp; &nbsp; &nbsp;  lock_result = fcntl(file, F_SETLKW, &amp;lock_data); <br />  &nbsp; &nbsp; &nbsp;  if (lock_result != -1) { <br />  &nbsp; &nbsp; &nbsp;     for (size_t i = 0; i &lt; strlen(message2); i++) {<br />  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;    write(file, &amp;message2[i], 1); //karakterenk&eacute;nt &iacute;r&aacute;s<br />  &nbsp; &nbsp; &nbsp;        usleep(20); //20 nanosec<br />  &nbsp; &nbsp; &nbsp;     }<br />  &nbsp; &nbsp; &nbsp;     write(file, "\n", 1);<br />&nbsp; &nbsp; &nbsp; &nbsp; <br />  &nbsp; &nbsp; &nbsp;     lock_data.l_type = F_UNLCK;<br />  &nbsp; &nbsp; &nbsp;     fcntl(file, F_SETLKW, &amp;lock_data);<br />         }<br />  &nbsp; &nbsp; } <br />   } else if (pid == 0) {<br />      for (int i = 0; i &lt; 10; i++) {<br />         lock_data.l_pid = getpid();<br />         lock_data.l_type = F_WRLCK;<br /><br /><br />  &nbsp; &nbsp; &nbsp; &nbsp;lock_result = fcntl(file, F_SETLKW, &amp;lock_data); <br />  &nbsp; &nbsp; &nbsp; &nbsp;if (lock_result != -1) { <br />  &nbsp; &nbsp; &nbsp; &nbsp;   for (size_t i = 0; i &lt; strlen(message1); i++) {<br /> &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;   write(file, &amp;message1[i], 1); //karakterenk&eacute;nt &iacute;r&aacute;s<br />  &nbsp; &nbsp; &nbsp; &nbsp;      usleep(20); //20 nanosec<br />  &nbsp; &nbsp; &nbsp; &nbsp;   }<br />  &nbsp; &nbsp; &nbsp; &nbsp;   write(file, "\n", 1);<br />  &nbsp; &nbsp; &nbsp; &nbsp;   <br />  &nbsp; &nbsp; &nbsp; &nbsp;   lock_data.l_type = F_UNLCK;<br />  &nbsp; &nbsp; &nbsp; &nbsp;   fcntl(file, F_SETLKW, &amp;lock_data);<br />  &nbsp; &nbsp; &nbsp; &nbsp;}<br />      }<br />   }<br /><br />   close(file);<br /><br />   return 0;<br />}<br /><br /></pre>
+<p><span style="text-decoration: underline; font-size: 14pt; background-color: #c2e0f4;"><strong>&Oacute;rai feladatok:</strong></span></p>
+<p><span style="font-size: 14pt;">K&eacute;sz&iacute;ts&uuml;nk egy olyan programot, amely a felhaszn&aacute;l&oacute;t&oacute;l bek&eacute;ri, hogy h&aacute;ny sz&uuml;lő- &eacute;s gyerekfolyamat ki&iacute;rat&aacute;st szeretn&eacute;nk l&aacute;tni a termin&aacute;lban! A sz&uuml;lő sz&ouml;vege az "I am the parent!", a gyerek sz&ouml;vege pedig "And?" legyen! &Iacute;rassuk ki tov&aacute;bb&aacute; a sz&uuml;lő &eacute;s a gyerek ID-j&aacute;t is!</span></p>
+<p><span style="font-size: 14pt;">&Iacute;rjunk olyan programot, amely teljes&iacute;ti az al&aacute;bbi felt&eacute;teleket. Elősz&ouml;r l&eacute;trehoz egy gyereket, majd a gyerek ki&iacute;rja, hogy elindult, alszik 5 m&aacute;sodpercig, &eacute;s 7-tel termin&aacute;l. A sz&uuml;lő megv&aacute;rja, hogy a gyerek v&eacute;gezzen, ki&iacute;rja a PID-j&aacute;t, ezt k&ouml;vetően kiolvassa &eacute;s ki&iacute;rja a kil&eacute;p&eacute;si k&oacute;dj&aacute;t.</span></p>
+<p><span style="font-size: 14pt;">Hozzunk l&eacute;tre 3 gyerekfolyamatot! V&eacute;letlenszerű &eacute;rt&eacute;ket kapjanak ahhoz, hogy meddig alszanak (1-10 m&aacute;sodperc intervallumon), mi a kil&eacute;p&eacute;si k&oacute;djuk. A sz&uuml;lő v&aacute;rja meg mindegyik folyamatot, &eacute;s &iacute;rja ki egyes&eacute;vel, melyik gyerekfolyamat mikor fejeződ&ouml;tt be, &eacute;s milyen st&aacute;tusszal! A ki&iacute;rat&aacute;s az al&aacute;bbi form&aacute;ban t&ouml;rt&eacute;njen:</span></p>
+<p><span style="font-size: 14pt;">{PID} folyamat successfully finished at {timestamp} with status code {state}.</span></p>
+<p><span style="font-size: 14pt;">&Iacute;rjunk olyan programot, ahol forkol&aacute;s ut&aacute;n kicser&eacute;lj&uuml;k a gyerekfolyamat programj&aacute;t a ps folyamatlek&eacute;rdező parancsra! A sz&uuml;lőfolyamat v&aacute;rja meg a befejez&eacute;s&eacute;t, majd &iacute;rja ki, hogy a ps lefutott!</span></p>
+<p><span style="font-size: 14pt;">K&eacute;sz&iacute;ts&uuml;nk olyan C forr&aacute;sf&aacute;jlt, amelyben k&eacute;t folyamat egy-egy stringet &iacute;r ugyanabba az adatf&aacute;jlba. Futtassuk a programot z&aacute;rol&aacute;s haszn&aacute;lata n&eacute;lk&uuml;l is, &eacute;s ezut&aacute;n &iacute;rjuk &aacute;t z&aacute;rol&aacute;sos &ndash; flock() &ndash; megold&aacute;sra!</span></p>
+<p><span style="font-size: 14pt;">Haszn&aacute;ljuk ki az fcntl() f&uuml;ggv&eacute;nyt, &eacute;s &iacute;rjunk olyan k&oacute;dot, amelyben n&eacute;gy folyamat, egyenk&eacute;nt 5-5 sort &iacute;r bele egy f&aacute;jlba. Z&aacute;roljuk az eg&eacute;sz f&aacute;jlt, &eacute;s n&eacute;zz&uuml;k meg az eredm&eacute;nyt!</span></p>
+<p><span style="font-size: 14pt;">&Iacute;rjunk programot, amely csak a f&aacute;jl első fel&eacute;t z&aacute;rolja az egyik folyamat &aacute;ltal!&nbsp;</span></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 8pt;">A 3. gyakorlat tananyag&aacute;hoz felhaszn&aacute;lt gyakorlati anyag: gy1/exec.c, fcntl_0.c, fcntl.c, fork.c, rand.c, system.c, write.c.</span></p>
