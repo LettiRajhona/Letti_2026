@@ -1,0 +1,336 @@
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 18pt;">Szoftverfejleszt&eacute;si folyamat fel&eacute;p&iacute;t&eacute;se</span></strong></span></p>
+<p><span style="font-size: 14pt;">A szoftvertechnol&oacute;gia &ndash; mint a t&aacute;rgy nev&eacute;ben is szerepel &ndash; feladata szoftverek rendszerezett, fel&uuml;gyelt, minős&eacute;gi fejleszt&eacute;se, majd műk&ouml;dtet&eacute;se &eacute;s karbantart&aacute;sa. A szoftver mag&aacute;ba foglalja nemcsak az aktu&aacute;lis programokat, hanem minden konfigur&aacute;ci&oacute;jukat &eacute;s dokument&aacute;ci&oacute;jukat is. Megfelelő sz&iacute;nvonalat kell biztos&iacute;tania az elv&aacute;rt funkci&oacute;kat illetően, &eacute;s &uacute;gynevezett minős&eacute;gi mutat&oacute;knak (karbantarthat&oacute;s&aacute;g, biztons&aacute;g, hat&eacute;konys&aacute;g, haszn&aacute;lhat&oacute;s&aacute;g, ...) is eleget kell tennie.</span></p>
+<p><span style="font-size: 14pt;">Egy szoftvertechnol&oacute;giai projekt sor&aacute;n k&uuml;l&ouml;nf&eacute;le szerepk&ouml;r&ouml;k oszthat&oacute;k ki. A projektmenedzser felel a szoftver elő&iacute;rt minős&eacute;g&eacute;&eacute;rt, mik&ouml;zben szervezi &eacute;s ir&aacute;ny&iacute;tja a projekten dolgoz&oacute; csapat munk&aacute;j&aacute;t. A term&eacute;kgazda &uuml;zleti folyamatokban j&aacute;rtas szem&eacute;ly. A programgazda a fejleszt&eacute;s &uuml;temez&eacute;s&eacute;t l&aacute;tja el, k&ouml;veti &eacute;s elosztja a feladatokat. Megk&uuml;l&ouml;nb&ouml;ztethetők m&eacute;g tervezők, fejlesztők &eacute;s minős&eacute;gbiztos&iacute;t&oacute; szem&eacute;lyek is.</span></p>
+<p><span style="font-size: 14pt;">A szoftver &eacute;letciklus&aacute;t n&eacute;gy r&eacute;szre bonthatjuk. A specifik&aacute;ci&oacute; c&eacute;lja a feladatot megold&oacute; szoftver funkci&oacute;inak tiszt&aacute;z&aacute;sa, a rendszerre &eacute;s a fejleszt&eacute;sre vonatkoz&oacute; elv&aacute;r&aacute;sok megad&aacute;sa. R&eacute;sz&eacute;t k&eacute;pezi a megval&oacute;s&iacute;that&oacute;s&aacute;gi elemz&eacute;s, amely a szoftver megval&oacute;s&iacute;t&aacute;s&aacute;nak lehets&eacute;ges k&ouml;r&uuml;lm&eacute;nyeit vizsg&aacute;lja, tov&aacute;bb&aacute; azt, hogy a befektet&eacute;s megt&eacute;r&uuml;l-e &uuml;zletileg. Tartalmazza a sz&uuml;ks&eacute;ges hum&aacute;n &eacute;s egy&eacute;b erőforr&aacute;sokat, a megval&oacute;s&iacute;t&aacute;s k&ouml;lts&eacute;g&eacute;t, időtartam&aacute;t, &eacute;s a k&eacute;sőbbi karbantart&aacute;s eshetős&eacute;g&eacute;t.</span></p>
+<p><span style="font-size: 14pt;">P&eacute;lda megval&oacute;s&iacute;that&oacute;s&aacute;gi tervre (v&aacute;zlatosan):</span></p>
+<p>&nbsp;</p>
+<p><strong>1. Projekt &aacute;ttekint&eacute;se</strong></p>
+<p>C&eacute;l: Egy Windows alap&uacute; Safari Tycoon j&aacute;t&eacute;k k&eacute;sz&iacute;t&eacute;se, amelyben a felhaszn&aacute;l&oacute; saj&aacute;t szafari parkot vezethet.&nbsp;</p>
+<p>Főbb funkci&oacute;k:</p>
+<ul>
+<li>&Uacute;j j&aacute;t&eacute;k kezd&eacute;se.</li>
+<li>Kor&aacute;bbi j&aacute;t&eacute;k bet&ouml;lt&eacute;se, ment&eacute;s.</li>
+<li>Megfelelő elemek, &eacute;lől&eacute;nyek v&aacute;s&aacute;rl&aacute;sa, elad&aacute;sa.</li>
+<li>J&aacute;t&eacute;kidő manipul&aacute;l&aacute;sa.</li>
+</ul>
+<p><strong>2. Műszaki megval&oacute;s&iacute;that&oacute;s&aacute;g</strong></p>
+<p>Technol&oacute;gi&aacute;k:</p>
+<ul>
+<li>Felhaszn&aacute;l&oacute;i fel&uuml;let &eacute;s szoftver: Java Swing.</li>
+<li>Adatb&aacute;zis: SQLite.</li>
+<li>JDBC haszn&aacute;lata adatb&aacute;zis kapcsolathoz.</li>
+</ul>
+<p>Előny&ouml;k:</p>
+<ul>
+<li>K&ouml;nnyen hordozhat&oacute;s&aacute;g, nem ig&eacute;nyel k&uuml;l&ouml;n szervert.</li>
+<li>Alacsony erőforr&aacute;sig&eacute;ny.</li>
+<li>&Uuml;zemeltetni nem sz&uuml;ks&eacute;ges.</li>
+<li>Esetleges hibajav&iacute;t&aacute;son fel&uuml;l nem kell biztos&iacute;tani karbantart&aacute;st.</li>
+</ul>
+<p>H&aacute;tr&aacute;nyok:</p>
+<ul>
+<li>Java Swingben nehezebb lehet modern grafikus fel&uuml;let haszn&aacute;lata.</li>
+<li>Az SQLite nem ide&aacute;lis nagy adatmennyis&eacute;ghez.</li>
+</ul>
+<p><strong>3. Operat&iacute;v megval&oacute;s&iacute;that&oacute;s&aacute;g</strong></p>
+<p>Hum&aacute;n erőforr&aacute;sok: 3 tervező, fejlesztő, tesztelő fejenk&eacute;nt k&ouml;r&uuml;lbel&uuml;l 100 &oacute;ra munk&aacute;val.</p>
+<p>Hardver k&ouml;vetelm&eacute;nyek: 3 fejlesztői sz&aacute;m&iacute;t&oacute;g&eacute;p, k&ouml;zepes hardverig&eacute;nnyel.</p>
+<p>Időkeret: MVP verzi&oacute; elk&eacute;sz&iacute;t&eacute;s&eacute;ig 13 h&eacute;t &aacute;ll rendelkez&eacute;sre.</p>
+<p>A megval&oacute;s&iacute;t&aacute;s időtartama k&ouml;r&uuml;lbel&uuml;l 300 &oacute;ra. Ezen fel&uuml;l nem ig&eacute;nyel extra k&ouml;lts&eacute;geket.</p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt;">A k&ouml;vetelm&eacute;nyelemz&eacute;s sor&aacute;n specifik&aacute;ci&oacute;k meg&iacute;r&aacute;s&aacute;ra van sz&uuml;ks&eacute;g. A k&ouml;vetelm&eacute;nyek funkcion&aacute;lis &eacute;s nem funkcion&aacute;lis specifik&aacute;ci&oacute;ra oszlanak. M&iacute;g az előbbi eset&eacute;ben a szoftver &aacute;ltal ny&uacute;jtott szolg&aacute;ltat&aacute;sok, reakci&oacute;k, viselked&eacute;sek le&iacute;r&aacute;sa t&ouml;rt&eacute;nik, az ut&oacute;bbi a szolg&aacute;ltat&aacute;sokra &eacute;s viselked&eacute;s&uuml;kre szab megszor&iacute;t&aacute;sokat. Ide &eacute;rtendő a term&eacute;kekkel szemben t&aacute;masztott k&ouml;vetelm&eacute;nyek, menedzsel&eacute;si k&ouml;vetelm&eacute;nyek, k&uuml;lső k&ouml;vetelm&eacute;nyek.</span></p>
+<p><span style="font-size: 14pt;">N&eacute;zz&uuml;nk egy p&eacute;ld&aacute;t elősz&ouml;r a nem funkcion&aacute;lis specifik&aacute;ci&oacute;ra.</span></p>
+<p>&nbsp;</p>
+<p><strong>1. Hat&eacute;konys&aacute;g</strong></p>
+<ul>
+<li>A sz&aacute;m&iacute;t&oacute;g&eacute;p szempontj&aacute;b&oacute;l a szoftver minim&aacute;lisan erőforr&aacute;sig&eacute;nyes.</li>
+<li>A bet&ouml;lt&eacute;si idő nem haladja meg a 1,5 m&aacute;sodpercet a szoftvert futtat&oacute; eszk&ouml;z&ouml;n, annak t&iacute;pus&aacute;t&oacute;l f&uuml;ggetlen&uuml;l.</li>
+<li>Gyorsan reag&aacute;l b&aacute;rmilyen bevitelre als&oacute; kateg&oacute;ri&aacute;s sz&aacute;m&iacute;t&oacute;g&eacute;peken is.</li>
+</ul>
+<p><strong>2. Megb&iacute;zhat&oacute;s&aacute;g</strong></p>
+<ul>
+<li>Alap&eacute;rtelmezett haszn&aacute;lat mellett nem produk&aacute;l hibajelens&eacute;get.</li>
+<li>Nincs v&aacute;ratlan programle&aacute;ll&aacute;s.</li>
+</ul>
+<p><strong>3. Biztons&aacute;g</strong></p>
+<ul>
+<li>A lok&aacute;lis felhaszn&aacute;l&oacute;k jelsz&oacute;val v&eacute;dett profilt hozhatnak l&eacute;tre, ahonnan kor&aacute;bbi j&aacute;t&eacute;k&aacute;ll&aacute;saik el&eacute;rhetőek.</li>
+<li>A jelszavak titkos&iacute;tottan ker&uuml;lnek elt&aacute;rol&aacute;sra.</li>
+</ul>
+<p><strong>4. Hordozhat&oacute;s&aacute;g</strong></p>
+<ul>
+<li>Az alkalmaz&aacute;s kiz&aacute;r&oacute;lag Windows k&ouml;rnyezetre k&eacute;sz&uuml;lt, minden Windows oper&aacute;ci&oacute;s rendszert futtat&oacute; eszk&ouml;z&ouml;n műk&ouml;dik.</li>
+<li>Kont&eacute;neriz&aacute;lt deployment &aacute;ll haszn&aacute;latban Docker seg&iacute;ts&eacute;g&eacute;vel.</li>
+</ul>
+<p><strong>5. Felhaszn&aacute;lhat&oacute;s&aacute;g</strong></p>
+<ul>
+<li>Az alkalmaz&aacute;s főleg asztali sz&aacute;m&iacute;t&oacute;g&eacute;pen &eacute;s laptopon haszn&aacute;lhat&oacute;, de a megfelelő perif&eacute;ri&aacute;k csatlakoztat&aacute;s&aacute;val egy&eacute;b eszk&ouml;z&ouml;n is futtathat&oacute;.</li>
+<li>A fő funkci&oacute;khoz vezető &uacute;tvonalak maximum 5 kattint&aacute;sb&oacute;l el&eacute;rhetők.</li>
+</ul>
+<p><strong>6. Fejleszt&eacute;s</strong></p>
+<ul>
+<li>A haszn&aacute;lt programoz&aacute;si nyelv a Java 25, a megjelen&iacute;t&eacute;s&eacute;rt a Java Swing eszk&ouml;zt&aacute;r felel.</li>
+<li>Objetumorient&aacute;lt paradigma haszn&aacute;lat jellemző, amelyben az MVC modell megval&oacute;sul.</li>
+<li>A szoftver forr&aacute;sk&oacute;dja k&ouml;veti a Java k&oacute;dol&aacute;si szab&aacute;lyait &eacute;s st&iacute;lussal kapcsolatos konvenci&oacute;it.</li>
+<li>A git verzi&oacute;kezel&eacute;s haszn&aacute;latban &aacute;ll.</li>
+<li>A tesztel&eacute;s automatiz&aacute;lt unit testeket takar, trivi&aacute;lis &eacute;s nem trivi&aacute;lis teszteseteket.</li>
+<li>CI/CD ellenőrz&eacute;s a gyors &eacute;s biztons&aacute;gos kiad&aacute;s &eacute;rdek&eacute;ben.</li>
+<li>A k&oacute;dhoz &eacute;s rendszerhez kapcsol&oacute;d&oacute; dokument&aacute;ci&oacute; a GitLab Wiki fel&uuml;let&eacute;n &eacute;rhetőek el.</li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt;">A funkcion&aacute;lis specifik&aacute;ci&oacute;ban azokat a tulajdons&aacute;gokat &eacute;s funkci&oacute;kat taglaljuk, amelyeket a szoftver megval&oacute;s&iacute;t. A Safari Tycoon eset&eacute;n a haszn&aacute;lati eset diagram egyes eseteit val&oacute;s&iacute;tjuk meg.</span></p>
+<p>&nbsp;</p>
+<p><strong>J&aacute;t&eacute;kp&aacute;lya</strong></p>
+<p>A j&aacute;t&eacute;k p&aacute;ly&aacute;ja egy <img class="equation_image" title="N * N" src="https://canvas.instructure.com/equation_images/N%2520*%2520N?scale=1" alt="LaTeX: N * N" data-equation-content="N * N" data-ignore-a11y-check="" /> m&eacute;retű n&eacute;gyzetr&aacute;cson (m&aacute;trixon) alapul, amely meghat&aacute;rozott, <img class="equation_image" title="75 * 75" src="https://canvas.instructure.com/equation_images/75%2520*%252075?scale=1" alt="LaTeX: 75 * 75" data-equation-content="75 * 75" data-ignore-a11y-check="" />-&ouml;s m&eacute;rettel rendelkezik. Ezen a gridr&aacute;cson kaphatnak helyet a k&uuml;l&ouml;nb&ouml;ző, megv&aacute;s&aacute;rolhat&oacute; &eacute;s eladhat&oacute; terept&aacute;rgyak, mozg&oacute; &eacute;s &aacute;ll&oacute; entit&aacute;sok, mint &aacute;llatok &eacute;s n&ouml;v&eacute;nyek, tov&aacute;bb&aacute; a szafarit bej&aacute;r&oacute; dzsipek a turist&aacute;ikkal. A p&aacute;lya bal felső sark&aacute;ban tal&aacute;lhat&oacute; a szafari park bej&aacute;rata, ahol a turist&aacute;k addig v&aacute;rakoznak, am&iacute;g egy dzsip el nem sz&aacute;ll&iacute;tja őket egy v&eacute;letlenszerű &uacute;tvonalon a jobb als&oacute; sarokban tal&aacute;lhat&oacute; kij&aacute;ratig. Alap&eacute;rtelmezetten egy &uacute;tvonal jelenik meg, amely a k&eacute;t kaput &ouml;sszek&ouml;ti.</p>
+<p><strong>Főmen&uuml;</strong></p>
+<p>A j&aacute;t&eacute;k ind&iacute;t&aacute;sakor be kell jelentkezni a lok&aacute;lis profilba. Ezut&aacute;n a főmen&uuml; tűnik fel, ahol t&ouml;bb opci&oacute; is tal&aacute;lhat&oacute;.&nbsp;</p>
+<ul>
+<li>Az &Uacute;j j&aacute;t&eacute;k gomb megnyom&aacute;sakor kiv&aacute;laszthat&oacute; a j&aacute;t&eacute;k neh&eacute;zs&eacute;gi szintje, &eacute;s elind&iacute;that&oacute; a szafari park.</li>
+<li>A J&aacute;t&eacute;k bet&ouml;lt&eacute;se gomb kattint&aacute;sakor a profil kor&aacute;bbi mentett j&aacute;t&eacute;kai tal&aacute;lhat&oacute;ak, egym&aacute;s alatt felsorol&aacute;ssal. Kiv&aacute;laszt&aacute;s ut&aacute;n elind&iacute;that&oacute; az adott j&aacute;t&eacute;k&aacute;ll&aacute;s.</li>
+<li>Az Inform&aacute;ci&oacute;k pontban a j&aacute;t&eacute;kkal kapcsolatos seg&eacute;dlet tal&aacute;lhat&oacute;. Tartalmazza a j&aacute;t&eacute;k műk&ouml;d&eacute;s&eacute;nek legalapvetőbb szab&aacute;lyait, &eacute;s megszorult helyzetben j&oacute; tan&aacute;ccsal l&aacute;tja el a felhaszn&aacute;l&oacute;kat.</li>
+<li>A Kil&eacute;p&eacute;s gomb bez&aacute;rja a j&aacute;t&eacute;k ablak&aacute;t, &eacute;s a fut&aacute;s befejeződik ment&eacute;s n&eacute;lk&uuml;l.</li>
+</ul>
+<p><strong><span style="font-family: inherit; font-size: 1rem;">A j&aacute;t&eacute;k fut&aacute;s k&ouml;zben</span></strong></p>
+<p><span style="font-family: inherit; font-size: 1rem;">A k&eacute;pernyő als&oacute; r&eacute;sz&eacute;n, k&ouml;z&eacute;pen egy multifunkcion&aacute;lis s&aacute;v tal&aacute;lhat&oacute;, rajta az egyes boltokkal, a sebess&eacute;g gombjaival &eacute;s az el&eacute;rhető tőke sz&aacute;m&aacute;val.</span></p>
+<ul>
+<li><span style="font-family: inherit; font-size: 1rem;">Boltpanel</span>
+<ul>
+<li><span style="font-family: inherit; font-size: 1rem;">N&ouml;v&eacute;nybolt. N&ouml;v&eacute;nyek (kaktusz, majomkeny&eacute;rfa, n&aacute;d...) v&aacute;s&aacute;rl&aacute;s&aacute;ra van lehetős&eacute;g.</span></li>
+<li><span style="font-family: inherit; font-size: 1rem;">&Aacute;llatbolt. &Aacute;llatok (oroszl&aacute;n, zebra, ...) v&aacute;s&aacute;rl&aacute;s&aacute;ra van lehetős&eacute;g.</span></li>
+<li><span style="font-family: inherit; font-size: 1rem;">J&aacute;rműbolt. K&uuml;l&ouml;nb&ouml;ző dzsipek v&aacute;s&aacute;rl&aacute;s&aacute;ra van lehetős&eacute;g.</span></li>
+<li><span style="font-family: inherit; font-size: 1rem;">Csempebolt. V&aacute;s&aacute;rolhat&oacute;k a dzsipekhez bej&aacute;rhat&oacute; utak, valamint k&uuml;l&ouml;nb&ouml;ző terepi elemek (v&iacute;z, hegy, f&ouml;ld, n&ouml;v&eacute;nyes-f&uuml;ves parcell&aacute;k) is.</span></li>
+</ul>
+</li>
+<li><span style="font-family: inherit; font-size: 1rem;">Sebess&eacute;g&aacute;ll&iacute;t&oacute; panel</span>
+<ul>
+<li><span style="font-family: inherit; font-size: 1rem;">J&aacute;t&eacute;kidő meg&aacute;ll&iacute;t&aacute;sa a <img class="equation_image" title="\vert \vert" src="https://canvas.instructure.com/equation_images/%255Cvert%2520%255Cvert?scale=1" alt="LaTeX: \vert \vert" data-equation-content="\vert \vert" data-ignore-a11y-check="" /> gomb haszn&aacute;lat&aacute;val.</span></li>
+<li><span style="font-family: inherit; font-size: 1rem;">Egyszeres sebess&eacute;g be&aacute;ll&iacute;t&aacute;sa a <img class="equation_image" title="\vert \rangle" src="https://canvas.instructure.com/equation_images/%255Cvert%2520%255Crangle?scale=1" alt="LaTeX: \vert \rangle" data-equation-content="\vert \rangle" data-ignore-a11y-check="" /> gomb haszn&aacute;lat&aacute;val.</span></li>
+<li><span style="font-family: inherit; font-size: 1rem;">K&eacute;tszeres sebess&eacute;g be&aacute;ll&iacute;t&aacute;sa a <img class="equation_image" title="\vert \rangle\rangle" src="https://canvas.instructure.com/equation_images/%255Cvert%2520%255Crangle%255Crangle?scale=1" alt="LaTeX: \vert \rangle\rangle" data-equation-content="\vert \rangle\rangle" data-ignore-a11y-check="" /> gomb haszn&aacute;lat&aacute;val.</span></li>
+<li><span style="font-family: inherit; font-size: 1rem;">H&aacute;romszoros sebess&eacute;g be&aacute;ll&iacute;t&aacute;sa a <img class="equation_image" title="\vert \rangle\rangle\rangle" src="https://canvas.instructure.com/equation_images/%255Cvert%2520%255Crangle%255Crangle%255Crangle?scale=1" alt="LaTeX: \vert \rangle\rangle\rangle" data-equation-content="\vert \rangle\rangle\rangle" data-ignore-a11y-check="" /> gomb haszn&aacute;lat&aacute;val.</span></li>
+</ul>
+</li>
+</ul>
+<p>Az &aacute;llatok g&ouml;rgővel kattint&aacute;skor chippelhetők, jobb klikkel pedig eladhat&oacute;ak. Ut&oacute;bbi &eacute;rv&eacute;nyes a n&ouml;v&eacute;nyekre is. A minimap nagy&iacute;that&oacute;, valamint kattint&aacute;s eset&eacute;n a meghat&aacute;rozott ter&uuml;letre ker&uuml;l a kamera. A j&aacute;t&eacute;kt&eacute;r mozgathat&oacute;.</p>
+<p><strong><span style="font-family: inherit; font-size: 1rem;">A j&aacute;t&eacute;kter&uuml;let parcell&aacute;i</span></strong></p>
+<p>A v&aacute;lasztott extra feladatok, a t&eacute;rk&eacute;pgener&aacute;l&aacute;s &eacute;s terepi akad&aacute;lyok miatt sz&uuml;ks&eacute;ges k&uuml;l&ouml;nb&ouml;ző parcell&aacute;kra bontani a j&aacute;t&eacute;kteret. Megk&uuml;l&ouml;nb&ouml;ztethet&uuml;nk magass&aacute;g alapj&aacute;n magasabb &eacute;s alacsonyabb ter&uuml;leteket, v&iacute;zi ter&uuml;leteket, k&uuml;l&ouml;nleges mezőket &eacute;s utakat is.</p>
+<p>V&iacute;zi ter&uuml;letek: iv&aacute;sra alkalmas ter&uuml;letek, amelyek k&ouml;rny&eacute;k&eacute;n n&aacute;d n&ouml;v&eacute;ny nő.</p>
+<ul>
+<li>LAKE</li>
+<li>BUBBLE LAKE</li>
+<li>RIVER</li>
+</ul>
+<p>F&uuml;ves &eacute;s homokos ter&uuml;letek: norm&aacute;l ter&uuml;letek, viszonylag s&iacute;k terepen, az &aacute;llatok mozg&aacute;sa norm&aacute;l sebess&eacute;ggel t&ouml;rt&eacute;nik. Legink&aacute;bb f&uuml;vek, majomkeny&eacute;rf&aacute;k &eacute;s kaktuszok nőnek rajtuk att&oacute;l f&uuml;ggően, hogy f&uuml;ves vagy homokos a parcella.</p>
+<ul>
+<li>FIELD</li>
+<li>WET FIELD</li>
+<li>FLOWER (&eacute;s m&aacute;s, 1-4 vir&aacute;got tartalmaz&oacute; FLOWER mezők)</li>
+<li>SAND</li>
+</ul>
+<p>Magasabb ter&uuml;letek: olyan ter&uuml;letek, amelyekn&eacute;l az &aacute;llatok mozg&aacute;sa korl&aacute;tozott, legink&aacute;bb sebess&eacute;gcs&ouml;kkent&eacute;s tekintet&eacute;ben. Min&eacute;l magasabbra ker&uuml;lnek, ann&aacute;l lassabban tudnak haladni.</p>
+<ul>
+<li>HILL</li>
+<li>MOUNTAIN</li>
+</ul>
+<p>K&uuml;l&ouml;nleges mezők: olyan mezők, amelyek megv&aacute;s&aacute;rolhat&oacute;ak, de a szafari j&aacute;t&eacute;kmenet&eacute;ben nem adnak hozz&aacute; semmihez. Alapvetően nem jelennek meg a p&aacute;ly&aacute;n.</p>
+<ul style="list-style-type: disc;">
+<li>ICE</li>
+<li>SNOW</li>
+</ul>
+<p>Utak: az utakat csak a j&aacute;t&eacute;k kezdete előtt lehet megv&aacute;s&aacute;rolni. Ezt egy felugr&oacute; ablak jelzi a j&aacute;t&eacute;kos sz&aacute;m&aacute;ra. Elej&eacute;n &eacute;s v&eacute;g&eacute;n GATE, egy-egy be- &eacute;s kil&eacute;p&eacute;si pont tal&aacute;lhat&oacute;.</p>
+<ul>
+<li>ROAD: egyszerű &uacute;t, a dzsipek mozg&aacute;sa ezen t&ouml;rt&eacute;nik. Egy &uacute;t automatikusan gener&aacute;l&oacute;dik a map (0,0) &eacute;s (75,75) koordin&aacute;t&aacute;j&uacute; parcell&aacute;i k&ouml;z&ouml;tt.</li>
+<li>ARTIFICIAL ROAD: seg&eacute;d&uacute;t. Eredetileg a vizes ter&uuml;letek felt&ouml;lt&eacute;s&eacute;re j&ouml;tt l&eacute;tre, hogy a k&eacute;sőbbiekben az &uacute;t&eacute;p&iacute;t&eacute;s vizeken kereszt&uuml;l is megval&oacute;sulhasson.</li>
+</ul>
+<p><strong>Kil&eacute;pő men&uuml;</strong></p>
+<p>A kil&eacute;pő men&uuml; navig&aacute;ci&oacute;ja hasonl&oacute; m&oacute;don t&ouml;rt&eacute;nik, mint a norm&aacute;l men&uuml;ben. T&ouml;bb funkci&oacute;t is ell&aacute;t.</p>
+<ul>
+<li>Vissza a j&aacute;t&eacute;kba.</li>
+<li>Hang ki- &eacute;s bekapcsol&aacute;sa.</li>
+<li>Aktu&aacute;lis j&aacute;t&eacute;k&aacute;ll&aacute;s ment&eacute;se.</li>
+<li>Vissza a főmen&uuml;be.</li>
+<li>Kil&eacute;p&eacute;s a j&aacute;t&eacute;kb&oacute;l.</li>
+</ul>
+<p><strong>J&aacute;t&eacute;k v&eacute;ge</strong></p>
+<p>A j&aacute;t&eacute;kos akkor győz&ouml;tt, ha a felsorol&aacute;sban kapott &eacute;rt&eacute;kek az aktu&aacute;lis j&aacute;t&eacute;kneh&eacute;zs&eacute;gtől f&uuml;ggően (3/6/12 h&oacute;napos idős&aacute;vban) adott k&uuml;sz&ouml;b&eacute;rt&eacute;k felett maradnak.</p>
+<ul>
+<li>L&aacute;togat&oacute;k sz&aacute;ma.</li>
+<li>N&ouml;v&eacute;nyevő &aacute;llatok sz&aacute;ma.</li>
+<li>Ragadoz&oacute; &aacute;llatok sz&aacute;ma.</li>
+<li>Tőke.</li>
+</ul>
+<p>A j&aacute;t&eacute;kos azonnal vesz&iacute;t, amennyiben:</p>
+<ul>
+<li>Csődbe megy.</li>
+<li>Kipusztul az &ouml;sszes &aacute;llat.</li>
+</ul>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt;">A k&ouml;vetelm&eacute;ny specifik&aacute;ci&oacute; sor&aacute;n az elemz&eacute;s &aacute;ltal kapott inform&aacute;ci&oacute;t &aacute;talak&iacute;tjuk egys&eacute;ges alakba. Ez azt jelenti, hogy le&iacute;r&aacute;st k&eacute;sz&iacute;t&uuml;nk a k&ouml;vetelm&eacute;nyekről, amely fejlesztői szinten relev&aacute;ns igaz&aacute;n. Ez a le&iacute;r&aacute;s lehet besz&eacute;lt nyelven, formaliz&aacute;lt le&iacute;r&aacute;ssal, form&aacute;lis matematikai le&iacute;r&aacute;ssal, le&iacute;r&oacute;nyelvekkel is. Sz&aacute;munkra a formaliz&aacute;lt le&iacute;r&aacute;s a fontos: ide tartoznak a haszn&aacute;lati eset diagramok &eacute;s a felhaszn&aacute;l&oacute;i t&ouml;rt&eacute;netek is.</span></p>
+<p><span style="font-size: 14pt;">A haszn&aacute;lati eset diagram a felhaszn&aacute;l&oacute; &eacute;s a rendszer kapcsolat&aacute;t bontogatja. H&aacute;rom fő elemből &aacute;ll. Az aktor az a felhaszn&aacute;l&oacute;, aki a rendszert haszn&aacute;lja, &eacute;s egyes funkci&oacute;kkal tal&aacute;lkozik. A funkci&oacute; a rendszer egy szolg&aacute;ltat&aacute;sa. Az előbbi kettőt &uacute;gynevezett rel&aacute;ci&oacute; kapcsolja &ouml;ssze, amely meghat&aacute;rozza, milyen kapcsolatban &aacute;ll a felhaszn&aacute;l&oacute; az adott programegys&eacute;ggel.</span></p>
+<p><span style="font-size: 14pt;">Haszn&aacute;lati rel&aacute;ci&oacute; eset&eacute;n az aktor ig&eacute;nybe veheti a rendszer egy bizonyos funkci&oacute;j&aacute;t. Ez a kapcsolat kiz&aacute;r&oacute;lag funkci&oacute; &eacute;s aktor k&ouml;z&ouml;tt val&oacute;sulhat meg.</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.instructure.com/courses/14032959/files/334671141/preview" alt="usage.png" width="136" height="108" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/14032959/files/334671141" data-api-returntype="File" /></p>
+<p><span style="font-size: 14pt;">&Aacute;ltal&aacute;nos&iacute;t&aacute;snak nevezz&uuml;k azt az esetet, amikor az egyik funkci&oacute; vagy aktor bővebb halmazt fed le, mint a m&aacute;sik. A ny&iacute;l v&eacute;ge arra a halmazra mutat, amelyik nagyobb.</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.instructure.com/courses/14032959/files/334671513/preview" alt="generalization.png" width="410" height="68" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/14032959/files/334671513" data-api-returntype="File" /></p>
+<p><span style="font-size: 14pt;">A tartalmaz&aacute;s sor&aacute;n az egyik funkci&oacute; r&eacute;sz&eacute;t k&eacute;pezi egy m&aacute;sik funkci&oacute;nak.</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.instructure.com/courses/14032959/files/334672493/preview" alt="include-1.png" width="286" height="86" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/14032959/files/334672493" data-api-returntype="File" /></p>
+<p><span style="font-size: 14pt;">A kiterjeszt&eacute;s azt jel&ouml;li, hogy egy adott tev&eacute;kenys&eacute;get kieg&eacute;sz&iacute;t&uuml;nk egy m&aacute;sik funkci&oacute;val.</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.instructure.com/courses/14032959/files/334672603/preview" alt="extend.png" width="316" height="68" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/14032959/files/334672603" data-api-returntype="File" /></p>
+<p><span style="font-size: 14pt;">Előfelt&eacute;tel rel&aacute;ci&oacute; sor&aacute;n egy funkci&oacute;nak meg kell előznie egy m&aacute;sik funkci&oacute;t.</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.instructure.com/courses/14032959/files/334673091/preview" alt="precedes.png" width="188" height="114" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/14032959/files/334673091" data-api-returntype="File" /></p>
+<p><span style="font-size: 14pt;">A r&aacute;k&ouml;vetkez&eacute;s akkor t&ouml;rt&eacute;nhet, ha egy funkci&oacute;t egy m&aacute;sik k&ouml;zvetlen&uuml;l k&ouml;vet.</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="https://canvas.instructure.com/courses/14032959/files/334673349/preview" alt="invokes.png" width="395" height="74" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/14032959/files/334673349" data-api-returntype="File" /></p>
+<p><span style="font-size: 14pt;">P&eacute;ldak&eacute;nt tekints&uuml;k meg a Safari j&aacute;t&eacute;k egy lehets&eacute;ges, b&aacute;r nem t&uacute;l bő haszn&aacute;lati eset diagramj&aacute;t.</span></p>
+<p><img src="https://canvas.instructure.com/courses/14032959/files/335258119/preview" alt="use_case.png" data-api-endpoint="https://canvas.instructure.com/api/v1/courses/14032959/files/335258119" data-api-returntype="File" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt;">Az egyes funkci&oacute;k r&eacute;szletesebb kifejt&eacute;s&eacute;hez felhaszn&aacute;l&oacute;i t&ouml;rt&eacute;netek k&eacute;sz&iacute;t&eacute;se lehets&eacute;ges. A felhaszn&aacute;l&oacute; t&ouml;rt&eacute;netek a felhaszn&aacute;l&oacute;k &aacute;ltal v&eacute;gzett tev&eacute;kenys&eacute;gsorozatokat &eacute;s azok egyes kimeneteit adj&aacute;k meg k&uuml;l&ouml;nb&ouml;ző szitu&aacute;ci&oacute;kban. Egy t&ouml;rt&eacute;netben meg kell hat&aacute;rozni egy szerepk&ouml;rt, valamint egy c&eacute;lt &eacute;s annak sz&uuml;ks&eacute;g&eacute;t. Ilyen eset lehet p&eacute;ld&aacute;ul az, amikor oktat&oacute;k&eacute;nt előad&aacute;st szeretn&eacute;nk tartani az&eacute;rt, hogy a hallgat&oacute;k jobban meg&eacute;rts&eacute;k a tananyagot.</span></p>
+<p><span style="font-size: 14pt;">A t&ouml;rt&eacute;netet r&ouml;gz&iacute;tett kulcsszavakkal &iacute;rhatjuk le, az <strong>As a ... I want to ... so that</strong> minta alapj&aacute;n. Egy t&ouml;rt&eacute;netre egy vagy t&ouml;bb eset is fel&iacute;rhat&oacute;, amelyben adott k&ouml;rnyezetben (given) egy tev&eacute;kenys&eacute;get v&eacute;gz&uuml;nk (when), &eacute;s erre valamilyen hat&aacute;st (then) v&aacute;runk. Az eseteket &uacute;gy kell megfogalmazni, hogy az &ouml;sszes k&ouml;r&uuml;lm&eacute;nyt &eacute;s lehets&eacute;ges bemeneteket figyelembe vessz&uuml;k. K&uuml;l&ouml;n&ouml;s figyelmet kell szentelni az edge case-ekre, hibalehetős&eacute;gekre. Az egyes t&ouml;rt&eacute;netekkel a v&eacute;gleges alkalmaz&aacute;s funkcion&aacute;lis tesztesetei &iacute;rhat&oacute;ak le.</span></p>
+<p><span style="font-size: 14pt;">A Safari eset&eacute;n a k&ouml;vetkező felhaszn&aacute;l&oacute;i t&ouml;rt&eacute;netek j&ouml;hetnek sz&oacute;ba:</span></p>
+<table style="border-collapse: collapse; width: 100%; height: 304px;" border="1">
+<tbody>
+<tr style="height: 29px;">
+<td style="width: 22.9885%; height: 29px;">AS A</td>
+<td style="width: 77.0115%; height: 29px;" colspan="2">J&Aacute;T&Eacute;KOS</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 22.9885%; height: 29px;">I WANT TO</td>
+<td style="height: 29px; width: 77.0115%;" colspan="2">ELIND&Iacute;TANI A J&Aacute;T&Eacute;KOT</td>
+</tr>
+<tr style="height: 29px;">
+<td style="height: 111px; width: 22.9885%;" rowspan="3">1</td>
+<td style="width: 17.2414%; height: 29px;">GIVEN</td>
+<td style="width: 59.7701%; height: 29px;">&uacute;j j&aacute;t&eacute;k men&uuml;pontot v&aacute;lasztjuk</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 17.2414%; height: 29px;">WHEN</td>
+<td style="width: 59.7701%; height: 29px;">kiv&aacute;lasztjuk a neh&eacute;zs&eacute;get</td>
+</tr>
+<tr style="height: 53px;">
+<td style="width: 17.2414%; height: 53px;">THEN</td>
+<td style="width: 59.7701%; height: 53px;">ind&iacute;t&aacute;s gombra nyomunk, &eacute;s a j&aacute;t&eacute;k elindul</td>
+</tr>
+<tr style="height: 53px;">
+<td style="width: 22.9885%; height: 135px;" rowspan="3">2</td>
+<td style="width: 17.2414%; height: 53px;">GIVEN</td>
+<td style="width: 59.7701%; height: 53px;">j&aacute;t&eacute;k bet&ouml;lt&eacute;se men&uuml;pontot v&aacute;lasztjuk</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 17.2414%; height: 29px;">WHEN</td>
+<td style="width: 59.7701%; height: 29px;">kiv&aacute;lasztunk egy kor&aacute;bbi j&aacute;t&eacute;k&aacute;ll&aacute;st</td>
+</tr>
+<tr style="height: 53px;">
+<td style="width: 17.2414%; height: 53px;">THEN</td>
+<td style="width: 59.7701%; height: 53px;">ind&iacute;t&aacute;s gombra nyomunk, &eacute;s a j&aacute;t&eacute;k elindul</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%;" border="1">
+<tbody>
+<tr>
+<td style="width: 22.9885%;">AS A</td>
+<td style="width: 77.0115%;" colspan="2">J&Aacute;T&Eacute;KOS</td>
+</tr>
+<tr>
+<td style="width: 22.9885%;">I WANT TO</td>
+<td style="width: 77.0115%;" colspan="2">V&Aacute;S&Aacute;ROLNI A BOLTBAN</td>
+</tr>
+<tr>
+<td style="width: 22.9885%;" rowspan="3">3</td>
+<td style="width: 17.7607%;">GIVEN</td>
+<td style="width: 59.2508%;">megnyitjuk a boltpanelt</td>
+</tr>
+<tr>
+<td style="width: 17.7607%;">WHEN</td>
+<td style="width: 59.2508%;">kiv&aacute;lasztjuk a v&aacute;s&aacute;roland&oacute; objektum t&iacute;pus&aacute;t</td>
+</tr>
+<tr>
+<td style="width: 17.7607%;">THEN</td>
+<td style="width: 59.2508%;">v&aacute;s&aacute;rl&aacute;s gombra nyomunk, &eacute;s a kiv&aacute;lasztott helyen megjelenik</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<table style="border-collapse: collapse; width: 100%; height: 256px;" border="1">
+<tbody>
+<tr style="height: 29px;">
+<td style="width: 22.9885%; height: 29px;">AS A</td>
+<td style="width: 77.0115%; height: 29px;" colspan="2">J&Aacute;T&Eacute;KOS</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 22.9885%; height: 29px;">I WANT TO</td>
+<td style="width: 77.0115%; height: 29px;" colspan="2">M&Oacute;DOS&Iacute;TANI A J&Aacute;T&Eacute;KIDŐT</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 22.9885%; height: 111px;" rowspan="3">4</td>
+<td style="width: 18.1609%; height: 29px;">GIVEN</td>
+<td style="width: 58.8506%; height: 29px;">megnyitjuk a sebess&eacute;g&aacute;ll&iacute;t&oacute; panelt</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 18.1609%; height: 29px;">WHEN</td>
+<td style="width: 58.8506%; height: 29px;">kiv&aacute;lasztjuk a j&aacute;t&eacute;k meg&aacute;ll&iacute;t&aacute;s&aacute;t</td>
+</tr>
+<tr style="height: 53px;">
+<td style="width: 18.1609%; height: 53px;">THEN</td>
+<td style="width: 58.8506%; height: 53px;">a j&aacute;t&eacute;k sz&uuml;netel, am&iacute;g m&aacute;st nem &aacute;ll&iacute;tunk</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 22.9885%; height: 87px;" rowspan="3">5</td>
+<td style="width: 18.1609%; height: 29px;">GIVEN</td>
+<td style="width: 58.8506%; height: 29px;">megnyitjuk a sebess&eacute;g&aacute;ll&iacute;t&oacute; panelt</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 18.1609%; height: 29px;">WHEN</td>
+<td style="width: 58.8506%; height: 29px;">kiv&aacute;lasztjuk a 2x-es sebess&eacute;get</td>
+</tr>
+<tr style="height: 29px;">
+<td style="width: 18.1609%; height: 29px;">THEN</td>
+<td style="width: 58.8506%; height: 29px;">a j&aacute;t&eacute;k sebess&eacute;ge az eredeti sebess&eacute;gn&eacute;l gyorsabb&aacute; v&aacute;lik</td>
+</tr>
+</tbody>
+</table>
+<p>&nbsp;</p>
+<p><span style="text-decoration: underline;"><strong><span style="font-size: 18pt;">Objektumorient&aacute;lt tervez&eacute;s</span></strong></span></p>
+<p><span style="font-size: 14pt;">Az objektumorient&aacute;lt tervez&eacute;s sor&aacute;n a rendszert az objektumok ment&eacute;n &eacute;p&iacute;tj&uuml;k fel, ahol az objektum t&ouml;bb szerepk&ouml;rt is megval&oacute;s&iacute;t. Egyr&eacute;szt, egy absztrakci&oacute; a val&oacute;s&aacute;ghoz, biztos&iacute;t egy elv&aacute;rt funkcionalit&aacute;st, tov&aacute;bb&aacute; az adat &eacute;s műk&ouml;d&eacute;s &aacute;ltal &eacute;p&uuml;lhet fel. A feladatok elv&eacute;gz&eacute;se sor&aacute;n az objektumokat (oszt&aacute;lyokat) be kell azonos&iacute;tanunk a funkci&oacute;k &eacute;s adatok ment&eacute;n, oly m&oacute;don, hogy milyen &eacute;p&iacute;tőelemeket tudn&aacute;nk megfeleltetni a funkci&oacute;knak.</span></p>
+<p><span style="font-size: 14pt;">Az objektumelvű tervez&eacute;s sor&aacute;n &ouml;t alapelvet c&eacute;lszerű k&ouml;vetni, amelyek a SOLID elvekk&eacute;nt is ismertek.</span></p>
+<ul>
+<li><span style="font-size: 14pt;">Single Responsibility Principle (SRP): egy programegys&eacute;g csak egyvalami&eacute;rt felelhet.</span></li>
+<li><span style="font-size: 14pt;">Open/Closed Principle (OCP): a programegys&eacute;gek nyitottak a kiterjeszt&eacute;sre, de z&aacute;rtak a m&oacute;dos&iacute;t&aacute;sra.</span></li>
+<li><span style="font-size: 14pt;">Liskov Substitution Principle (LSP): az objektumok helyettes&iacute;thetőek alt&iacute;pusaik p&eacute;ld&aacute;ny&aacute;val.</span></li>
+<li><span style="font-size: 14pt;">Interface Segregation Principle (ISP): egy &aacute;ltal&aacute;nos interf&eacute;sz helyett t&ouml;bb kliens specifikus interf&eacute;sz.</span></li>
+<li><span style="font-size: 14pt;">Dependency Inversion Principle (DIP): az absztrakci&oacute;t&oacute;l f&uuml;gg&uuml;nk, nem a konkretiz&aacute;ci&oacute;t&oacute;l.</span></li>
+</ul>
+<p><span style="font-size: 14pt;">Az oszt&aacute;lydiagramon t&ouml;bbf&eacute;le jel&ouml;l&eacute;s megtal&aacute;lhat&oacute; az egyes objektumok kapcsolat&aacute;t szimboliz&aacute;lva. </span></p>
+<ul>
+<li><span style="font-size: 14pt;">F&uuml;ggős&eacute;gi kapcsolatr&oacute;l besz&eacute;l&uuml;nk, amikor egy met&oacute;dus epiz&oacute;dszerűen kapcsolatba ker&uuml;l egy m&aacute;sik oszt&aacute;ly objektum&aacute;val.</span></li>
+</ul>
+<pre>public class Food {...}<br />public class Cat {<br />   public void feed(Food food) {...}<br />}</pre>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/courses/14032959/files/335990835/preview" alt="dependency.png" /></p>
+<ul>
+<li style="text-align: left;"><span style="font-size: 14pt;">Az asszoci&aacute;ci&oacute; olyan f&uuml;ggős&eacute;gi kapcsolat, amely hosszabb ideig fenn&aacute;ll az oszt&aacute;lyok k&ouml;z&ouml;tt. Ilyen eset, amikor adattagk&eacute;nt megadunk egy m&aacute;sik oszt&aacute;ly egy vagy t&ouml;bb p&eacute;ld&aacute;ny&aacute;t. Jel&ouml;l&eacute;se folytonos vonallal t&ouml;rt&eacute;nik, amely mindk&eacute;t v&eacute;g&eacute;n sz&aacute;m&eacute;rt&eacute;k tal&aacute;lhat&oacute;. A minimum &eacute;rt&eacute;k az 1.</span></li>
+</ul>
+<pre><span style="font-size: 12pt;">public class Student { ... }</span><br /><span style="font-size: 12pt;">public class Teacher {</span><br /><span style="font-size: 12pt;">   private List&lt;Student&gt; students;</span><br /><span style="font-size: 12pt;">   ...</span><br /><span style="font-size: 12pt;">}</span></pre>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/courses/14032959/files/335991141/preview" alt="association.png" /></p>
+<ul>
+<li style="text-align: left;"><span style="font-size: 14pt;">Az aggreg&aacute;ci&oacute; egy speci&aacute;lis asszoci&aacute;ci&oacute;. Azt jelenti, hogy az egyik oszt&aacute;ly objektumai r&eacute;sz&eacute;t k&eacute;pezik egy m&aacute;sik oszt&aacute;ly objektumainak.</span></li>
+</ul>
+<pre><span style="font-size: 12pt;">public class Engine {</span><br /><span style="font-size: 12pt;">   private int cylinders;</span><br /><span style="font-size: 12pt;">   public Engine(int cylinders) {</span><br /><span style="font-size: 12pt;">      this.cylinders = cylinders;</span><br /><span style="font-size: 12pt;">   }</span><br /><span style="font-size: 12pt;">}</span></pre>
+<pre><span style="font-size: 12pt;">public class Wheel {</span><br /><span style="font-size: 12pt;">   private String manufacturer;</span><br /><span style="font-size: 12pt;">   public Wheel(String manufacturer) {</span><br /><span style="font-size: 12pt;">      this.manufacturer = manufacturer;</span><br /><span style="font-size: 12pt;">   }</span><br /><span style="font-size: 12pt;">}</span></pre>
+<pre><span style="font-size: 12pt;">public class Car {</span><br /><span style="font-size: 12pt;">   private String name;</span><br /><span style="font-size: 12pt;">   private Engine engine;</span><br /><span style="font-size: 12pt;">   private List&lt;Wheel&gt; wheels;</span><br /><span style="font-size: 12pt;">   public Car(String name) {</span><br /><span style="font-size: 12pt;">      this.name = name;</span><br /><span style="font-size: 12pt;">      this.wheels = new ArrayList&lt;&gt;();</span><br /><span style="font-size: 12pt;">   }</span><br /><span style="font-size: 12pt;">   public void addWheel(Wheel wheel) {</span><br /><span style="font-size: 12pt;">      wheels.add(wheel);</span><br /><span style="font-size: 12pt;">   }</span><br /><span style="font-size: 12pt;">   public void addEngine(Engine engine) {</span><br /><span style="font-size: 12pt;">      this.engine = engine;</span><br /><span style="font-size: 12pt;">   }</span><br /><span style="font-size: 12pt;">   ...</span><br /><span style="font-size: 12pt;">}</span></pre>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/courses/14032959/files/335992061/preview" alt="aggregation.png" /></p>
+<ul>
+<li style="text-align: left;">A kompoz&iacute;ci&oacute; egy speci&aacute;lis aggreg&aacute;ci&oacute;, fizikai tartalmaz&aacute;st jelent oszt&aacute;lyok k&ouml;z&ouml;tt. Akkor haszn&aacute;ljuk, amikor nincs egyik objektum a m&aacute;sik n&eacute;lk&uuml;l &ndash; mint ember a testr&eacute;szei n&eacute;lk&uuml;l. Tel&iacute;tett rombusszal jel&ouml;lj&uuml;k.</li>
+</ul>
+<pre>public class Human {<br />   private Head head;<br />   private Body body;<br />   public Human() { ... }<br />   public void setHead(Head head) {<br />      this.head = head;<br />   }<br />   public void setBody(Body body) {<br />      this.body = body;<br />   }<br />   public void display() { ... }<br />}<br /><br />public class Head {<br />   private String name;<br />   public Head(String name) {<br />      this.name = name;<br />   }<br />}<br /><br />public class Body {<br />   private String name;<br />   public Body(String name) {<br />      this.name = name;<br />   }<br />}</pre>
+<p style="text-align: center;"><img style="display: block; margin-left: auto; margin-right: auto;" src="/courses/14032959/files/335992853/preview" alt="composition.png" /></p>
+<ul>
+<li style="text-align: left;"><span style="font-size: 14pt;">Interf&eacute;sz megval&oacute;s&iacute;t&aacute;s eset&eacute;n szaggatott teli nyilat haszn&aacute;lunk, amely az interf&eacute;sz fel&eacute; mutat.&nbsp;</span></li>
+<li style="text-align: left;"><span style="font-size: 14pt;">Oszt&aacute;lyb&oacute;l sz&aacute;rmaztat&aacute;s eset&eacute;n sima teli nyilat haszn&aacute;lunk, ez esetben a ny&iacute;l az ősoszt&aacute;lyra mutat.</span></li>
+</ul>
+<p>N&eacute;zz&uuml;nk most p&eacute;ld&aacute;t arra, hogyan &eacute;p&iacute;thető fel egy kezdetleges oszt&aacute;lydiagram. Ez persze bőv&iacute;thető egy&eacute;b oszt&aacute;lyokkal, amiket alkalmazunk.</p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/courses/14032959/files/335994225/preview" alt="class_diagram.png" /></p>
+<p><span style="font-size: 14pt;">A szoftver k&uuml;l&ouml;n&aacute;ll&oacute; egys&eacute;gekből &eacute;p&uuml;lhet fel. A szoftver komponens egy adott funkcionalit&aacute;s&eacute;rt felelő, fizikailag elk&uuml;l&ouml;n&uuml;lő r&eacute;sze a rendszernek. &Ouml;n&aacute;ll&oacute;an telep&iacute;thető, belső műk&ouml;d&eacute;se rejtett, &eacute;s olyan funkcionalit&aacute;st is szolg&aacute;ltathat, amelyet m&aacute;s komponensek haszn&aacute;lnak fel. Egy szoftverrendszerben sz&aacute;mos komponenst ismerhet&uuml;nk: mobil &eacute;s asztali alkalmaz&aacute;sok, weblapok, webszolg&aacute;ltat&aacute;s, adatb&aacute;zis... Term&eacute;szetesen egy program is felbonthat&oacute; komponensekre. Ilyenkor megk&uuml;l&ouml;nb&ouml;ztet&uuml;nk v&eacute;grehajthat&oacute; &aacute;llom&aacute;nyokat, valamint programk&ouml;nyvt&aacute;rakat is. </span></p>
+<p><span style="font-size: 14pt;">A komponensdiagram l&eacute;nyege, hogy a szoftverrendszer komponenseit &aacute;br&aacute;zoljuk, ismertess&uuml;k a rendszer elemeit, a szolg&aacute;ltatott &eacute;s elv&aacute;rt interf&eacute;szeket, tov&aacute;bb&aacute; a k&ouml;z&ouml;tt&uuml;k fenn&aacute;ll&oacute; kapcsolatokat.</span></p>
+<p><span style="font-size: 14pt;">Tegy&uuml;k fel, hogy a Szafari j&aacute;t&eacute;kot nem csak asztali alkalmaz&aacute;sk&eacute;nt szeretn&eacute;nk futtathat&oacute;v&aacute; tenni (pl. gondoljunk a Farmeram&aacute;ra, b&ouml;ng&eacute;szőben &eacute;s let&ouml;ltve is j&aacute;tszthat&oacute;). Ilyenkor a k&ouml;vetkező komponensdiagramot kaphatjuk:</span></p>
+<p><img src="/courses/14032959/files/335996759/preview" alt="component_diagram.png" /></p>
+<p>&nbsp;</p>
+<p><span style="font-size: 14pt;">A tervez&eacute;s utols&oacute; l&eacute;p&eacute;sek&eacute;nt tekints&uuml;k meg az adatb&aacute;zis s&eacute;ma diagramot. Az adatb&aacute;zis s&eacute;ma diagram abban seg&iacute;t, hogy a megval&oacute;s&iacute;t&aacute;s sor&aacute;n a k&eacute;sőbbi adatt&aacute;rol&aacute;s mik&eacute;ntj&eacute;t a megfelelő m&oacute;don el tudjuk k&eacute;sz&iacute;teni.</span></p>
+<p><img style="display: block; margin-left: auto; margin-right: auto;" src="/courses/14032959/files/335997657/preview" alt="database_schema.png" /></p>
